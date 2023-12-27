@@ -3,17 +3,26 @@ import Image from "next/image";
 const SideBar = ({ children }) => {
   return (
     <>
-      <div className="bg-slate-500 fixed top-0 left-0 w-14 h-screen flex flex-col justify-end items-center p-2">
-        <button type="button" className="border-[2px] rounded-full p-2 mb-1">
-          <Image src="/whats.png" alt="Whatsapp logo" width="64" height="64" />
+      <div className="fixed z-10 top-0 left-0 pl-8 pb-8 h-screen flex flex-col justify-end items-center gap-6">
+        <button
+          type="button"
+          className="shadow-2xl opacity-60 hover:opacity-100 transition-all"
+        >
+          <Image src="/whats.svg" alt="Whatsapp logo" width="52" height="52" />
         </button>
 
-        <button type="button" className="border-[2px] rounded-full p-2 mb-1">
-          <Image src="/x.webp" alt="X logo" width="64" height="64" />
+        <button
+          type="button"
+          className="shadow-2xl opacity-60 hover:opacity-100 transition-all"
+        >
+          <Image src="/twitter.svg" alt="Twitter logo" width="52" height="52" />
         </button>
 
-        <button type="button" className="border-[2px] rounded-full p-2 mb-1">
-          <Image src="/insta.png" alt="Instagram logo" width="64" height="64" />
+        <button
+          type="button"
+          className="shadow-2xl opacity-60 hover:opacity-100 transition-all"
+        >
+          <Image src="/insta.svg" alt="Instagram logo" width="52" height="52" />
         </button>
       </div>
       {children}
