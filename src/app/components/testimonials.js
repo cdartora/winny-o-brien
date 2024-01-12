@@ -47,20 +47,20 @@ function Testimonials() {
   };
 
   return (
-    <div className="relative min-h-[500px] w-full max-w-5xl flex flex-col items-center justify-center px-16 pt-24 pb-32 mt-28">
+    <div className="relative min-h-[500px] w-full max-w-5xl flex flex-col items-center justify-center md:px-16 p-4 pt-24 pb-32 mt-28">
       <Image
         src="/quote-icon.svg"
         width={162}
         height={162}
         alt="quote icon"
-        className="absolute -top-10 left-20"
+        className="absolute -top-10 md:left-20 left-5"
       />
       <Image
         src="/quote-icon.svg"
         width={162}
         height={162}
         alt="quote icon"
-        className="absolute -bottom-10 right-20 rotate-180"
+        className="absolute -bottom-10 md:right-20 right-5 rotate-180"
       />
 
       <div className="flex justify-center items-center">
@@ -69,41 +69,46 @@ function Testimonials() {
             className="bg-transparent rounded-full"
             onClick={previosTestimonial}
           >
-            <Image src="/arrow.svg" width={200} height={200} alt="arrow icon" />
+            <Image
+              src="/arrow.svg"
+              width={200}
+              height={200}
+              alt="Depoimento anterior"
+            />
           </button>
         </div>
-        <div className="flex flex-col items-center px-6">
+        <div className="flex flex-col items-center md:px-6 px-2">
           <h1
-            className={`${cakelan.className} text-3xl font-bold my-8 text-antiqueWhite`}
+            className={`${cakelan.className} md:text-3xl text-xl font-bold my-8 text-antiqueWhite`}
           >
             {testimonials[currentTestimonial].title}
           </h1>
-          <p className="text-center">
+          <p className="text-center md:text-md text-sm">
             {testimonials[currentTestimonial].testimonial}
           </p>
           <div className="flex gap-2 mt-8">
             <div
               className={clsx(
-                "rounded-full bg-white w-2 h-2 opacity-50",
-                currentTestimonial === 0 && "opacity-100"
+                "rounded-full bg-white w-2 h-2",
+                !(currentTestimonial === 0) && "opacity-50"
               )}
             />
             <div
               className={clsx(
-                "rounded-full bg-white w-2 h-2 opacity-50",
-                currentTestimonial === 1 && "opacity-100"
+                "rounded-full bg-white w-2 h-2",
+                !(currentTestimonial === 1) && "opacity-50"
               )}
             />
             <div
               className={clsx(
-                "rounded-full bg-white w-2 h-2 opacity-50",
-                currentTestimonial === 2 && "opacity-100"
+                "rounded-full bg-white w-2 h-2",
+                !(currentTestimonial === 2) && "opacity-50"
               )}
             />
             <div
               className={clsx(
-                "rounded-full bg-white w-2 h-2 opacity-50",
-                currentTestimonial === 3 && "opacity-100"
+                "rounded-full bg-white w-2 h-2",
+                !(currentTestimonial === 3) && "opacity-50"
               )}
             />
           </div>
@@ -118,7 +123,7 @@ function Testimonials() {
               src="/arrow.svg"
               width={200}
               height={200}
-              alt="arrow icon"
+              alt="Próximo depoimento"
             />
           </button>
         </div>
