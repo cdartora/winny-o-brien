@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import localFont from "next/font/local";
 import Image from "next/image";
 import Testimonials from "./components/testimonials";
