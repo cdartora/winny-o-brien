@@ -1,29 +1,31 @@
 "use client";
 import { useState } from "react";
+
 import Image from "next/image";
-import { cakelan } from "../page";
 import clsx from "clsx";
+
+import { cakelan } from "../page";
 
 const testimonials = [
   {
-    title: "Frase principal de depoimento",
+    title: "Despertando a Magia Interior",
     testimonial:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatem, voluptatum, quae, natus quos quidem voluptate quia voluptates quibusdam dolorum fugiat. Quisquam voluptatem, voluptatum, quae, natus quos quidem voluptate quia voluptates quibusdam dolorum fugiat.",
+      '"Conhecer a Winny foi uma revelação mágica! Suas leituras de Tarot transcendem as cartas, mergulhando fundo nos mistérios do meu ser. Uma verdadeira guia espiritual que ilumina o caminho do despertar como bruxa." - Carolina S.',
   },
   {
-    title: "Frase principal de depoimento 2",
+    title: "Feitiços e Encantamentos Transformadores",
     testimonial:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatem, voluptatum, quae, natus quos quidem voluptate quia voluptates quibusdam dolorum fugiat. Quisquam voluptatem, voluptatum, quae, natus quos quidem voluptate quia voluptates quibusdam dolorum fugiat.",
+      '"Winny não apenas lê o Tarot; ela tece feitiços e encantamentos que transformam vidas. Sua abordagem única à bruxaria conecta o passado e o presente, oferecendo uma jornada espiritual que ressoa profundamente. Uma experiência verdadeiramente mágica!" - Eduardo M.',
   },
   {
-    title: "Frase principal de depoimento 3",
+    title: "Trajetória de Sabedoria e Magia",
     testimonial:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatem, voluptatum, quae, natus quos quidem voluptate quia voluptates quibusdam dolorum fugiat. Quisquam voluptatem, voluptatum, quae, natus quos quidem voluptate quia voluptates quibusdam dolorum fugiat.",
+      '"Minha jornada espiritual ganhou um novo significado com Winny. Sua trajetória como bruxa e sua habilidade de compartilhar sabedoria ancestral através do Tarot são inspiradoras. Uma experiência que vai além das palavras, redefinindo o significado de magia em minha vida." - Gabriela R.',
   },
   {
-    title: "Frase principal de depoimento 4",
+    title: "Conexões Místicas e Revelações Poderosas",
     testimonial:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatem, voluptatum, quae, natus quos quidem voluptate quia voluptates quibusdam dolorum fugiat. Quisquam voluptatem, voluptatum, quae, natus quos quidem voluptate quia voluptates quibusdam dolorum fugiat.",
+      '"Winny é mais que uma leitora de Tarot; é uma condutora de conexões místicas. Suas leituras revelam verdades profundas e despertam poderosas energias interiores. Uma fonte de inspiração para todos que buscam desvendar os mistérios da vida e da bruxaria." - Marcos C.',
   },
 ];
 
@@ -86,28 +88,28 @@ function Testimonials() {
           <p className="text-center md:text-md text-sm">
             {testimonials[currentTestimonial].testimonial}
           </p>
-          <div className="flex gap-2 mt-8">
+          <div className="flex gap-2 md:mt-8 mt-4">
             <div
               className={clsx(
-                "rounded-full bg-white w-2 h-2",
+                "rounded-full bg-white w-[4px] h-[4px] md:h-2 md:w-2",
                 !(currentTestimonial === 0) && "opacity-50"
               )}
             />
             <div
               className={clsx(
-                "rounded-full bg-white w-2 h-2",
+                "rounded-full bg-white w-[4px] h-[4px] md:h-2 md:w-2",
                 !(currentTestimonial === 1) && "opacity-50"
               )}
             />
             <div
               className={clsx(
-                "rounded-full bg-white w-2 h-2",
+                "rounded-full bg-white w-[4px] h-[4px] md:h-2 md:w-2",
                 !(currentTestimonial === 2) && "opacity-50"
               )}
             />
             <div
               className={clsx(
-                "rounded-full bg-white w-2 h-2",
+                "rounded-full bg-white w-[4px] h-[4px] md:h-2 md:w-2",
                 !(currentTestimonial === 3) && "opacity-50"
               )}
             />
