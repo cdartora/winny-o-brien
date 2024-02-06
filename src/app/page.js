@@ -39,6 +39,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col items-center bg-gray-200 h-screen text-center md:p-24 p-8 pt-0 max-w-[500px]">
+            <div className="md:hidden h-[350px]"></div>
             <h1
               className={`${cakelan.className} md:text-4xl text-2xl font-bold my-4`}
             >
@@ -155,7 +156,7 @@ export default function Home() {
                 alt="graphic detail"
               />
 
-              {/* <Image
+              <Image
                 src="/star-detail.svg"
                 width={50}
                 height={50}
@@ -167,11 +168,13 @@ export default function Home() {
                 height={200}
                 className="rotate-90"
                 alt="graphic detail"
-              /> */}
+              />
             </div>
           </div>
         </div>
       </div>
+
+      <div className="relative min-h-[500px] w-full max-w-5xl flex flex-col items-center justify-center md:px-16 p-4 pt-24 pb-32 mt-28"></div>
     </main>
   );
 }
