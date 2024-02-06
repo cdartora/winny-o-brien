@@ -13,16 +13,6 @@ const SideBar = ({ children }) => {
           <Image src="/whats.svg" alt="Whatsapp logo" width="42" height="42" />
         </a>
 
-        <a className="shadow-2xl opacity-60 hover:opacity-100 transition-all">
-          <Image
-            src="/twitter.svg"
-            alt="Twitter logo"
-            width="42"
-            height="42"
-            className="md:52"
-          />
-        </a>
-
         <a
           href="https://www.instagram.com/winnyobrien/"
           target="_blank"
