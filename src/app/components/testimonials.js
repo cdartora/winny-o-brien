@@ -49,7 +49,7 @@ function Testimonials() {
   };
 
   return (
-    <div className="relative min-h-[500px] w-full max-w-5xl flex flex-col items-center justify-center md:px-16 p-4 pt-24 pb-32 mt-28">
+    <div className="relative w-full max-w-5xl flex flex-col items-center justify-center md:px-16 p-4 pt-24 pb-32 mt-28 mb-[50px]">
       <Image
         src="/quote-icon.svg"
         width={162}
@@ -65,7 +65,7 @@ function Testimonials() {
         className="absolute -bottom-10 md:right-20 right-5 rotate-180"
       />
 
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center h-[300px]">
         <div>
           <button
             className="bg-transparent rounded-full"
@@ -73,46 +73,72 @@ function Testimonials() {
           >
             <Image
               src="/arrow.svg"
-              width={200}
-              height={200}
+              width={80}
+              height={80}
               alt="Depoimento anterior"
+              className="hidden md:block"
             />
           </button>
         </div>
-        <div className="flex flex-col items-center md:px-6 px-2">
+        <div className="flex flex-col justify-between items-center md:px-6 px-2 max-w-[720px] h-auto">
           <h1
-            className={`${cakelan.className} md:text-3xl text-xl font-bold my-8 text-antiqueWhite`}
+            className={`${cakelan.className} text-center md:text-3xl text-xl font-bold my-4 text-antiqueWhite`}
           >
             {testimonials[currentTestimonial].title}
           </h1>
           <p className="text-center md:text-md text-sm">
             {testimonials[currentTestimonial].testimonial}
           </p>
-          <div className="flex gap-2 md:mt-8 mt-4">
+          <div className="flex items-center gap-2 md:mt-8 mt-4">
+            <button
+              className="bg-transparent rounded-full"
+              onClick={previosTestimonial}
+            >
+              <Image
+                className="md:hidden"
+                src="/arrow.svg"
+                width={30}
+                height={30}
+                alt="Depoimento anterior"
+              />
+            </button>
+
             <div
               className={clsx(
-                "rounded-full bg-white w-[4px] h-[4px] md:h-2 md:w-2",
+                "rounded-full bg-white w-[8px] h-[8px] md:h-2 md:w-2",
                 !(currentTestimonial === 0) && "opacity-50"
               )}
             />
             <div
               className={clsx(
-                "rounded-full bg-white w-[4px] h-[4px] md:h-2 md:w-2",
+                "rounded-full bg-white w-[8px] h-[8px] md:h-2 md:w-2",
                 !(currentTestimonial === 1) && "opacity-50"
               )}
             />
             <div
               className={clsx(
-                "rounded-full bg-white w-[4px] h-[4px] md:h-2 md:w-2",
+                "rounded-full bg-white w-[8px] h-[8px] md:h-2 md:w-2",
                 !(currentTestimonial === 2) && "opacity-50"
               )}
             />
             <div
               className={clsx(
-                "rounded-full bg-white w-[4px] h-[4px] md:h-2 md:w-2",
+                "rounded-full bg-white w-[8px] h-[8px] md:h-2 md:w-2",
                 !(currentTestimonial === 3) && "opacity-50"
               )}
             />
+            <button
+              className="bg-transparent rounded-full"
+              onClick={nextTestimonial}
+            >
+              <Image
+                className="rotate-180 md:hidden"
+                src="/arrow.svg"
+                width={30}
+                height={30}
+                alt="Próximo depoimento"
+              />
+            </button>
           </div>
         </div>
         <div>
@@ -121,10 +147,10 @@ function Testimonials() {
             onClick={nextTestimonial}
           >
             <Image
-              className="rotate-180"
+              className="rotate-180 hidden md:block"
               src="/arrow.svg"
-              width={200}
-              height={200}
+              width={80}
+              height={80}
               alt="Próximo depoimento"
             />
           </button>
