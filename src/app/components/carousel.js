@@ -4,8 +4,8 @@ import { cakelan } from "../page";
 
 function Carousel() {
   return (
-    <div className="relative min-h-[700px] w-full max-w-5xl flex flex-col items-center justify-center md:px-16 p-4 pt-24 pb-32">
-      <div id="tarot" className="p-4">
+    <div className="relative min-h-[700px] w-full max-w-5xl flex flex-col items-center justify-center md:px-16 p-4 pt-24 pb-8 md:pb-32">
+      <div id="tarot" className="p-0 md:p-4">
         <h1
           className={`${cakelan.className} md:text-3xl text-xl font-bold my-4 text-antiqueWhite`}
         >
