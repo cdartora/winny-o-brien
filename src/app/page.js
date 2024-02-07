@@ -93,14 +93,14 @@ export default function Home() {
 
       <div
         style={{ backgroundImage: "url(/about-me-background.png)" }}
-        className="bg-center bg-cover flex min-h-[110vh] w-full flex-col items-center justify-center mt-20 backdrop-opacity-30 backdrop-blur"
+        className="bg-center bg-cover flex w-full flex-col items-center justify-center mt-20 backdrop-opacity-30 backdrop-blur"
       >
-        <div className="md:p-24 md:pt-0 flex items-center h-screen w-full">
+        <div className="md:p-24 md:pt-0 flex items-center w-full">
           <div className="hidden lg:block lg:w-1/2"></div>
-          <div className="flex items-center justify-center lg:w-1/2">
+          <div className="flex items-center justify-center lg:w-1/2 w-full">
             <div className="flex flex-col p-4">
               <h1
-                className={`${cakelan.className} md:text-3xl text-xl font-bold my-8 text-antiqueWhite whitespace-nowrap `}
+                className={`${cakelan.className} md:text-3xl text-xl font-bold my-8 text-antiqueWhite `}
               >
                 UM POUCO DA MINHA HISTÓRIA
               </h1>
@@ -143,7 +143,7 @@ export default function Home() {
                 href="https://www.instagram.com/winnyobrien/"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:bg-white transition-all hover:text-richBlack flex justify-around gap-2 md:text-xl text-xs border px-4 md:px-8 py-2 rounded-full place-self-start"
+                className="hover:bg-white transition-all hover:text-richBlack flex justify-around self-end gap-2 md:text-xl text-xs border px-4 md:px-8 py-2 rounded-full place-self-start"
               >
                 <span className="whitespace-nowrap">veja meu instagram</span>
               </a>
@@ -176,6 +176,59 @@ export default function Home() {
       </div>
 
       <Carousel />
+
+      <div className="relative min-h-[700px] w-full max-w-5xl flex flex-col lg:flex-row items-start justify-center md:px-16 p-4 pt-2 pb-32">
+        <div className="p-0 md:p-4">
+          <h1
+            className={`${cakelan.className} md:text-3xl text-xl font-bold my-4 text-antiqueWhite`}
+          >
+            ATENDIMENTO PRESENCIAL
+          </h1>
+          <p className="md:text-md text-sm mb-4">
+            Além do serviço online, também faço atendimento presencial. O
+            trabalho é realizado no Café Mal Assombrado Poa, na Rua Cel.
+            Fernando Machado 513.
+          </p>
+          <Image
+            layout="responsive"
+            width={536}
+            height={636}
+            src="/map.svg"
+            style={{ pointerEvents: "none", draggable: "false" }}
+            alt="mapa com a localizacão do atendimento presencial"
+          />
+        </div>
+        <div className="p-0 md:p-4">
+          <h1
+            className={`${cakelan.className} md:text-3xl text-xl font-bold my-4 text-antiqueWhite`}
+          >
+            PREFERE UM ATENDIMENTO MAIS INTIMISTA?
+          </h1>
+          <p className="md:text-md text-sm">
+            Além do serviço online, também faço atendimento presencial. O
+            trabalho é realizado no Café Mal Assombrado Poa, na Rua Cel.
+            Fernando Machado 513.
+          </p>
+          <h1
+            className={`${cakelan.className} md:text-3xl text-xl font-bold my-4 text-antiqueWhite`}
+          >
+            MAIS ALGUMA DÚVIDA?
+          </h1>
+          <p className="md:text-md text-sm">NOME</p>
+          <input
+            type="text"
+            className="w-full h-10 bg-richBlack border-[1px] rounded-tl-lg p-2"
+          />
+          <p className="md:text-md text-sm mt-4">E-MAIL</p>
+          <input
+            type="text"
+            className="w-full h-10 bg-richBlack border-[1px] rounded-tl-lg p-2"
+          />
+          <button className="mt-4 float-right hover:bg-white transition-all hover:text-richBlack flex justify-around self-end gap-2 md:text-md text-xs border px-4 md:px-8 py-2 rounded-full place-self-start">
+            <span className="whitespace-nowrap">Enviar</span>
+          </button>
+        </div>
+      </div>
     </main>
   );
 }
