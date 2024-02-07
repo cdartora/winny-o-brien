@@ -1,7 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 import localFont from "next/font/local";
 import Image from "next/image";
+
 import Testimonials from "./components/testimonials";
+import Carousel from "./components/carousel";
 
 const cakelan = localFont({ src: "./fonts/cakelan.woff" });
 export { cakelan };
@@ -39,20 +41,20 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col items-center bg-gray-200 h-screen text-center md:p-24 p-8 pt-0 max-w-[500px]">
-            <div className="md:hidden h-[350px]"></div>
+            <div className="md:hidden h-[30%]"></div>
             <h1
               className={`${cakelan.className} md:text-4xl text-2xl font-bold my-4`}
             >
               cartas que susurram mistério, revelando o enigma de cada jornada
             </h1>
+
             <a
               href="#tarot"
-              className="flex justify-around gap-2 md:text-xl text-xs border px-4 md:px-8 py-2 rounded-full"
+              className="hover:bg-white transition-all hover:text-richBlack flex justify-around gap-2 md:text-xl text-xs border px-4 md:px-8 py-2 rounded-full"
             >
               <span className="whitespace-nowrap">
                 clique aqui e adquira agora
               </span>
-              <Image src="/go_detail.svg" width={30} height={10} alt="seta" />
             </a>
           </div>
         </div>
@@ -141,10 +143,9 @@ export default function Home() {
                 href="https://www.instagram.com/winnyobrien/"
                 target="_blank"
                 rel="noreferrer"
-                className="flex justify-around gap-2 md:text-xl text-xs border px-4 md:px-8 py-2 rounded-full place-self-start"
+                className="hover:bg-white transition-all hover:text-richBlack flex justify-around gap-2 md:text-xl text-xs border px-4 md:px-8 py-2 rounded-full place-self-start"
               >
-                <span className="whitespace-nowrap">Veja meu instagram</span>
-                <Image src="/go_detail.svg" width={30} height={10} alt="seta" />
+                <span className="whitespace-nowrap">veja meu instagram</span>
               </a>
             </div>
             <div className="flex flex-col h-screen">
@@ -174,7 +175,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="relative min-h-[500px] w-full max-w-5xl flex flex-col items-center justify-center md:px-16 p-4 pt-24 pb-32 mt-28"></div>
+      <Carousel />
     </main>
   );
 }

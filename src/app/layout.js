@@ -14,7 +14,7 @@ export const metadata = {
 
 const RootLayout = ({ children }) => {
   return (
-    <html lang="en">
+    <html lang="en" className="!scroll-smooth">
       <body className={workSans.className}>
         <SideBar>{children}</SideBar>
       </body>
