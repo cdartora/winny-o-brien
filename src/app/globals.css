@@ -25,3 +25,17 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.hero {
+  background-image: url(/home-desktop.png);
+  @media (max-width: 767px) {
+    background-image: url(/home-mobile.png);
+  }
+}
+
+.about {
+  background-image: url(/about.png);
+  @media (max-width: 1000px) {
+    background-image: none;
+  }
+}

@@ -10,13 +10,10 @@ export { cakelan };
 
 export default function Home() {
   return (
-    <main className="bg-richBlack flex min-h-screen flex-col items-center">
+    <main className="bg-richBlack flex min-h-screen flex-col items-center text-white">
       {/* hero section container */}
-      <div
-        style={{ backgroundImage: "url(/hero-background.png)" }}
-        className="bg-center bg-cover flex min-h-screen w-full flex-col items-center justify-between"
-      >
-        <div className="flex flex-col items-center bg-gray-200 text-center md:p-24 md:pt-0">
+      <div className="bg-center bg-cover flex min-h-screen w-full flex-col items-center justify-between hero">
+        <div className="w-full flex flex-col items-center bg-gray-200 md:p-24 md:pt-0">
           <div className="mb-24 flex items-center justify-center pt-4">
             {/* detalhes ao redor do nome Winny O'Brien */}
             <Image
@@ -39,11 +36,10 @@ export default function Home() {
               alt="graphic detail"
             />
           </div>
-
-          <div className="flex flex-col items-center bg-gray-200 h-screen text-center md:p-24 p-8 pt-0 max-w-[500px]">
-            <div className="md:hidden h-[30%]"></div>
+          <div className="flex flex-col items-start w-full bg-gray-200 h-screen md:p-24 p-8 pt-0 ">
+            <div className="md:hidden h-[50%]"></div>
             <h1
-              className={`${cakelan.className} md:text-4xl text-2xl font-bold my-4`}
+              className={`${cakelan.className} md:text-4xl text-2xl font-bold my-4 max-w-[500px]`}
             >
               cartas que susurram mistério, revelando o enigma de cada jornada
             </h1>
@@ -53,7 +49,7 @@ export default function Home() {
               className="hover:bg-white transition-all hover:text-richBlack flex justify-around gap-2 md:text-xl text-xs border px-4 md:px-8 py-2 rounded-full"
             >
               <span className="whitespace-nowrap">
-                clique aqui e adquira agora
+                Clique aqui e adquira agora
               </span>
             </a>
           </div>
@@ -91,10 +87,7 @@ export default function Home() {
         />
       </div>
 
-      <div
-        style={{ backgroundImage: "url(/about-me-background.png)" }}
-        className="bg-center bg-cover flex w-full flex-col items-center justify-center mt-20 backdrop-opacity-30 backdrop-blur"
-      >
+      <div className="bg-center bg-cover flex w-full flex-col items-center justify-center mt-20 backdrop-opacity-30 backdrop-blur about">
         <div className="md:p-24 md:pt-0 flex items-center w-full">
           <div className="hidden lg:block lg:w-1/2"></div>
           <div className="flex items-center justify-center lg:w-1/2 w-full">
@@ -145,10 +138,10 @@ export default function Home() {
                 rel="noreferrer"
                 className="hover:bg-white transition-all hover:text-richBlack flex justify-around self-end gap-2 md:text-xl text-xs border px-4 md:px-8 py-2 rounded-full place-self-start"
               >
-                <span className="whitespace-nowrap">veja meu instagram</span>
+                <span className="whitespace-nowrap">Veja meu instagram</span>
               </a>
             </div>
-            <div className="flex flex-col h-screen">
+            {/* <div className="flex flex-col h-screen">
               <Image
                 src="/name_detail_2.svg"
                 width={3}
@@ -170,7 +163,7 @@ export default function Home() {
                 className="rotate-90"
                 alt="graphic detail"
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
