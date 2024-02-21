@@ -8,24 +8,24 @@ import { cakelan } from "../page";
 
 const testimonials = [
   {
-    title: "Despertando a Magia Interior",
+    title: "Clareza Mental, Tiragens e Banhos",
     testimonial:
-      '"Conhecer a Winny foi uma revelação mágica! Suas leituras de Tarot transcendem as cartas, mergulhando fundo nos mistérios do meu ser. Uma verdadeira guia espiritual que ilumina o caminho do despertar como bruxa." - Carolina S.',
+      "O trabalho da Winny é muito sério e vai muito além do que só uma tiragem, ela traz um atendimento humanizado trazendo total clareação para a minha vida, sou adota do tarot, barras de acces e também dos banhos mágicos que ela faz com exclusividade e excelência. Deixo aqui o meu agradecimento por cuidar tão bem de mim, existe uma vida após os seus cuidados e ela é muito mais leve.",
   },
   {
-    title: "Feitiços e Encantamentos Transformadores",
+    title: "Conforto na primeira sessão",
     testimonial:
-      '"Winny não apenas lê o Tarot; ela tece feitiços e encantamentos que transformam vidas. Sua abordagem única à bruxaria conecta o passado e o presente, oferecendo uma jornada espiritual que ressoa profundamente. Uma experiência verdadeiramente mágica!" - Eduardo M.',
+      "Minha experiencia com a primeira sessão de tarô com a winny foi incrivelmente confortante, eu estava em um estado de muita tristeza e desorientação, e ainda sendo um pouco cética em relação ao tarô. Fiz a clareza mental e consegui alinhar vários âmbitos da minha vida com ela naquele dia, várias coisas que não tinha como ninguém saber, as cartas mostraram e não so mostraram como me guiaram também.",
   },
   {
-    title: "Trajetória de Sabedoria e Magia",
+    title: "Consultas recorrentes e intimistas",
     testimonial:
-      '"Minha jornada espiritual ganhou um novo significado com Winny. Sua trajetória como bruxa e sua habilidade de compartilhar sabedoria ancestral através do Tarot são inspiradoras. Uma experiência que vai além das palavras, redefinindo o significado de magia em minha vida." - Gabriela R.',
+      "Amo tirar tarô com a Winny! Desde que nos conhecemos venho tirando tarô com ela, pelo menos umas 6x ao ano, e é sempre muito mais que uma consulta, é uma conversa com uma amiga. O atendimento é humano, a gente sempre se sente bem acolhido. Sempre posso contar com ela pra me auxiliar à tomar decisões difíceis ou escutar algumas verdades. O reiki e o banhos de ervas dela também são perfeitos! A Winny é pura luz e leveza na minha vida e indico ela pra todos.",
   },
   {
-    title: "Conexões Místicas e Revelações Poderosas",
+    title: "ansiedade e leveza",
     testimonial:
-      '"Winny é mais que uma leitora de Tarot; é uma condutora de conexões místicas. Suas leituras revelam verdades profundas e despertam poderosas energias interiores. Uma fonte de inspiração para todos que buscam desvendar os mistérios da vida e da bruxaria." - Marcos C.',
+      "Acordei me sentindo muito mais leve e tranquila depois da nossa sessão. Dormi super bem e acordei mais produtiva, amorosa e sentindo que a ansiedade que eu tava se dissipou. Pelo jeito de conduzir a sessão as cartas me deram muito mais clareza sobre como agir. Muito obrigada pelo trabalho e tua luz.",
   },
 ];
 
@@ -49,7 +49,7 @@ function Testimonials() {
   };
 
   return (
-    <div className="relative w-full max-w-5xl flex flex-col items-center justify-center md:px-16 p-4 pt-24 pb-32 mt-28 mb-[50px]">
+    <div className="relative w-full max-w-5xl flex flex-col items-center justify-center md:px-16 p-4 pt-24 pb-32 mt-28 mb-[50px] min-h-[760px]">
       <Image
         src="/quote-icon.svg"
         width={162}
@@ -65,7 +65,7 @@ function Testimonials() {
         className="absolute -bottom-10 md:right-20 right-5 rotate-180"
       />
 
-      <div className="flex justify-center items-center h-[300px]">
+      <div className="flex justify-center items-center h-full">
         <div>
           <button
             className="bg-transparent rounded-full"
@@ -80,16 +80,19 @@ function Testimonials() {
             />
           </button>
         </div>
-        <div className="flex flex-col justify-between items-center md:px-6 px-2 max-w-[720px] h-auto">
-          <h1
-            className={`${cakelan.className} text-center md:text-3xl text-xl font-bold my-4 text-antiqueWhite`}
-          >
-            {testimonials[currentTestimonial].title}
-          </h1>
-          <p className="text-center md:text-md text-sm">
-            {testimonials[currentTestimonial].testimonial}
-          </p>
-          <div className="flex items-center gap-2 md:mt-8 mt-4">
+        <div className="flex flex-col justify-center items-center md:px-6 px-2 max-w-[720px] h-[400px]">
+          <div>
+            <h1
+              className={`${cakelan.className} text-center md:text-3xl text-xl font-bold my-4 text-antiqueWhite`}
+            >
+              {testimonials[currentTestimonial].title}
+            </h1>
+            <p className="text-center md:text-md text-sm ">
+              {testimonials[currentTestimonial].testimonial}
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2 mt-4">
             <button
               className="bg-transparent rounded-full"
               onClick={previosTestimonial}
