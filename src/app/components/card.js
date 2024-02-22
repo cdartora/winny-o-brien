@@ -4,7 +4,7 @@ import { cakelan } from "../page";
 function Card({ cardInfo }) {
   return (
     <div
-      className="flex flex-col items-center w-[402px] h-[603px] bg-center bg-cover text-richBlack"
+      className="flex flex-col items-center w-[402px] h-[603px] relative bg-center bg-cover text-richBlack"
       style={{ backgroundImage: "url(/card-layout.svg)" }}
       src="/card-layout.svg"
     >
@@ -21,11 +21,13 @@ function Card({ cardInfo }) {
           width={0}
           className="h-[190px] w-auto"
         />
-        <p className="text-center text-sm mt-4">{cardInfo.description}</p>
+        <p className="text-center text-sm mt-4 px-10">{cardInfo.description}</p>
       </div>
 
       {/* nome da tiragem */}
-      <h1 className={`${cakelan.className} text-2xl mt-9`}>{cardInfo.name}</h1>
+      <h1 className={`${cakelan.className} text-2xl absolute bottom-4`}>
+        {cardInfo.name}
+      </h1>
     </div>
   );
 }

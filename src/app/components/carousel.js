@@ -15,36 +15,36 @@ const cards = [
     description:
       "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
   },
-  {
-    number: "3",
-    name: "ARE YOU MINE?",
-    description:
-      "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
-  },
-  {
-    number: "4",
-    name: "TIRAGEM MENSAL",
-    description:
-      "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
-  },
-  {
-    number: "5",
-    name: "CONHECA OS CICLOS DA SUA VIDA",
-    description:
-      "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
-  },
-  {
-    number: "6",
-    name: "CLAREZA MENTAL",
-    description:
-      "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
-  },
-  {
-    number: "7",
-    name: "VOCÊ ACREDITA EM VIDAS PASSADAS?",
-    description:
-      "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
-  },
+  // {
+  //   number: "3",
+  //   name: "ARE YOU MINE?",
+  //   description:
+  //     "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
+  // },
+  // {
+  //   number: "4",
+  //   name: "TIRAGEM MENSAL",
+  //   description:
+  //     "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
+  // },
+  // {
+  //   number: "5",
+  //   name: "CONHECA OS CICLOS DA SUA VIDA",
+  //   description:
+  //     "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
+  // },
+  // {
+  //   number: "6",
+  //   name: "CLAREZA MENTAL",
+  //   description:
+  //     "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
+  // },
+  // {
+  //   number: "7",
+  //   name: "VOCÊ ACREDITA EM VIDAS PASSADAS?",
+  //   description:
+  //     "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
+  // },
 ];
 
 function Carousel() {
@@ -64,7 +64,7 @@ function Carousel() {
           mergulhemos em sua situacão e alcancemos uma visão mais abrangente.
         </p>
       </div>
-      <div className="scroll-smooth pb-5 px-10 mt-4 flex items-center justify-center w-full gap-10 snap-x overflow-x-auto border-2">
+      <div className="scroll-smooth pb-5 md:px-10 mt-4 flex items-center justify-center w-full gap-10 snap-x overflow-x-auto border-2">
         {cards.map((currentCard) => (
           <Card cardInfo={currentCard} key={currentCard} />
         ))}

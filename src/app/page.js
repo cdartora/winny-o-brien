@@ -24,7 +24,7 @@ export default function Home() {
               alt="graphic detail"
             />
             <h1
-              className={`${cakelan.className} md:text-2xl text-sm font-bold md:mx-4 mx-2 text-antiqueWhite whitespace-nowrap`}
+              className={`${cakelan.className} md:text-2xl text-sm font-bold md:mx-4 mx-2 whitespace-nowrap`}
             >
               Winny O'Brien
             </h1>
@@ -36,22 +36,26 @@ export default function Home() {
               alt="graphic detail"
             />
           </div>
-          <div className="flex flex-col items-start w-full bg-gray-200 h-screen md:p-24 p-8 pt-0 ">
-            <div className="md:hidden h-[50%]"></div>
-            <h1
-              className={`${cakelan.className} md:text-4xl text-2xl font-bold my-4 max-w-[500px]`}
-            >
-              cartas que susurram mistério, revelando o enigma de cada jornada
-            </h1>
+          <div className="flex w-full">
+            <div className="flex-grow w-full md:w-1/2 flex flex-col items-center text-center bg-gray-200 h-screen p-8 pt-0 ">
+              <div className="md:hidden h-[50%]"></div>
+              <h1
+                className={`${cakelan.className} md:text-5xl text-2xl font-bold my-4 max-w-[500px] leading-10 tracking-wider hero-call`}
+              >
+                cartas que susurram mistério, revelando o enigma de cada jornada
+              </h1>
 
-            <a
-              href="#tarot"
-              className="hover:bg-white transition-all hover:text-richBlack flex justify-around gap-2 md:text-xl text-xs border px-4 md:px-8 py-2 rounded-full"
-            >
-              <span className="whitespace-nowrap">
-                Clique aqui e adquira agora
-              </span>
-            </a>
+              <a
+                href="#tarot"
+                className="hover:bg-white transition-all hover:text-richBlack flex justify-around gap-2 md:text-xl text-xs border px-4 md:px-8 py-2 rounded-full"
+              >
+                <span className="whitespace-nowrap">
+                  Clique aqui e adquira agora
+                </span>
+              </a>
+            </div>
+
+            <div className="hidden md:block flex-grow w-1/2"></div>
           </div>
         </div>
         <div />
@@ -170,14 +174,14 @@ export default function Home() {
 
       <Carousel />
 
-      <div className="relative min-h-[700px] w-full max-w-5xl flex flex-col lg:flex-row items-start justify-center md:px-16 p-4 pt-2 pb-32">
+      <div className="relative min-h-[700px] w-full max-w-7xl flex flex-col lg:flex-row items-start justify-center md:px-16 p-4 pt-2 pb-32">
         <div className="p-0 md:p-4">
           <h1
             className={`${cakelan.className} md:text-3xl text-xl font-bold my-4 text-antiqueWhite`}
           >
             ATENDIMENTO PRESENCIAL
           </h1>
-          <p className="md:text-md text-sm mb-4">
+          <p className="mb-4">
             Além do serviço online, também faço atendimento presencial. O
             trabalho é realizado no Café Mal Assombrado Poa, na Rua Cel.
             Fernando Machado 513.
@@ -197,7 +201,7 @@ export default function Home() {
           >
             PREFERE UM ATENDIMENTO MAIS INTIMISTA?
           </h1>
-          <p className="md:text-md text-sm">
+          <p>
             Além do serviço online, também faço atendimento presencial. O
             trabalho é realizado no Café Mal Assombrado Poa, na Rua Cel.
             Fernando Machado 513.
@@ -217,7 +221,12 @@ export default function Home() {
             type="text"
             className="w-full h-10 bg-richBlack border-[1px] rounded-tl-lg p-2"
           />
-          <button className="mt-4 float-right hover:bg-white transition-all hover:text-richBlack flex justify-around self-end gap-2 md:text-md text-xs border px-4 md:px-8 py-2 rounded-full place-self-start">
+          <p className="md:text-md text-sm mt-4">MENSAGEM</p>
+          <input
+            type="textarea"
+            className="w-full h-44 bg-richBlack border-[1px] rounded-tl-lg p-2"
+          />
+          <button className="mt-4 float-right hover:bg-white transition-all hover:text-richBlack flex justify-around self-end gap-2 md:text-md border px-4 md:px-8 py-2 rounded-full place-self-start">
             <span className="whitespace-nowrap">Enviar</span>
           </button>
         </div>

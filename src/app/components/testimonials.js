@@ -49,7 +49,7 @@ function Testimonials() {
   };
 
   return (
-    <div className="relative w-full max-w-5xl flex flex-col items-center justify-center md:px-16 p-4 pt-24 pb-32 mt-28 mb-[50px] min-h-[760px]">
+    <div className="relative w-full max-w-5xl flex flex-col items-center justify-center md:px-16 p-4 pt-24 pb-32 mt-28 mb-[50px] ">
       <Image
         src="/quote-icon.svg"
         width={162}
@@ -65,29 +65,29 @@ function Testimonials() {
         className="absolute -bottom-10 md:right-20 right-5 rotate-180"
       />
 
-      <div className="flex justify-center items-center h-full">
-        <div>
+      <div className="flex justify-center items-center md:min-h-[400px]">
+        <div className="min-w-12 hidden md:block">
           <button
             className="bg-transparent rounded-full"
             onClick={previosTestimonial}
           >
             <Image
               src="/arrow.svg"
-              width={80}
-              height={80}
+              width={50}
+              height={50}
               alt="Depoimento anterior"
               className="hidden md:block"
             />
           </button>
         </div>
-        <div className="flex flex-col justify-center items-center md:px-6 px-2 max-w-[720px] h-[400px]">
+        <div className="flex flex-col justify-center items-center md:px-6 px-2">
           <div>
             <h1
-              className={`${cakelan.className} text-center md:text-3xl text-xl font-bold my-4 text-antiqueWhite`}
+              className={`${cakelan.className} text-center md:text-3xl text-2xl font-bold my-6 text-antiqueWhite`}
             >
               {testimonials[currentTestimonial].title}
             </h1>
-            <p className="text-center md:text-md text-sm ">
+            <p className="text-center">
               {testimonials[currentTestimonial].testimonial}
             </p>
           </div>
@@ -144,7 +144,7 @@ function Testimonials() {
             </button>
           </div>
         </div>
-        <div>
+        <div className="min-w-12 hidden md:block">
           <button
             className="bg-transparent rounded-full"
             onClick={nextTestimonial}
@@ -152,8 +152,8 @@ function Testimonials() {
             <Image
               className="rotate-180 hidden md:block"
               src="/arrow.svg"
-              width={80}
-              height={80}
+              width={50}
+              height={50}
               alt="Próximo depoimento"
             />
           </button>
