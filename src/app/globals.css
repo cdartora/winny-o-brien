@@ -33,14 +33,23 @@ body {
   }
 }
 
-.about {
-  background-image: url(/about.png);
-  @media (max-width: 1000px) {
-    background-image: none;
-  }
-}
-
 .hero-call {
   line-height: 1.1em;
   letter-spacing: 0.1em;
+}
+
+.carousel {
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 24px;
+  overflow-x: scroll;
+  display: flex;
+}
+
+.carousel > div {
+  flex-shrink: 0;
+  scroll-snap-align: center;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
 }
