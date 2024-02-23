@@ -10,6 +10,7 @@ const workSans = Work_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 export const metadata = {
   title: "Winny O'Brien",
   description: "Tiragem de tarot.",
+  icons: { icon: "/star-detail.svg" },
 };
 
 const RootLayout = ({ children }) => {
