@@ -10,7 +10,7 @@ export { cakelan };
 
 export default function Home() {
   return (
-    <main className="bg-richBlack flex min-h-screen flex-col items-center text-white">
+    <main className="bg-richBlack flex min-h-screen flex-col items-center text-white overflow-hidden">
       {/* hero section container */}
       <div className="bg-center bg-cover flex min-h-screen w-full flex-col items-center justify-between hero">
         <div className="w-full flex flex-col items-center bg-gray-200 md:p-24 md:pt-0">
@@ -91,10 +91,18 @@ export default function Home() {
         />
       </div>
 
-      <div className="bg-center bg-cover flex w-full flex-col items-center justify-center mt-20 backdrop-opacity-30 backdrop-blur about">
+      <div className="relative flex w-full flex-col items-center justify-center mt-20 backdrop-opacity-30 backdrop-blur">
         <div className="md:p-24 md:pt-0 flex items-center w-full">
-          <div className="hidden lg:block lg:w-1/2"></div>
-          <div className="flex items-center justify-center lg:w-1/2 w-full">
+          <div className="hidden xl:block w-1/2">
+            <Image
+              src="/about.png"
+              width={812}
+              height={928}
+              className="absolute left-0 -top-16"
+              alt="Winny O'Brien abrindo um leque com as cartas de tarot e uma bola de cristal."
+            />
+          </div>
+          <div className="flex items-center justify-center xl:w-1/2 w-full">
             <div className="flex flex-col p-4">
               <h1
                 className={`${cakelan.className} md:text-3xl text-xl font-bold my-8 text-antiqueWhite `}
