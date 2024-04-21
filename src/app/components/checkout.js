@@ -37,7 +37,7 @@ export default function Checkout({ isOpen, closeCheckout }) {
                   <h3
                     className={`${cakelan.className} mt-2 md:mt-4 md:text-lg text-center`}
                   >
-                    Winny O'Brien
+                    Winny O&apos;Brien
                   </h3>
                 </Dialog.Title>
                 <div className="px-4 lg:px-24 mt-32">
