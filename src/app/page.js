@@ -5,15 +5,18 @@ import Image from "next/image";
 import Testimonials from "./components/testimonials";
 import Carousel from "./components/carousel";
 
+import Card from "./components/card";
+import { cards } from "./components/carousel";
+
 const cakelan = localFont({ src: "./fonts/cakelan.woff" });
 export { cakelan };
 
 export default function Home() {
   return (
-    <main className="bg-richBlack flex min-h-screen flex-col items-center text-white overflow-hidden">
+    <main className="bg-richBlack flex flex-col items-center text-white overflow-hidden">
       {/* hero section container */}
-      <div className="bg-center bg-cover flex min-h-screen w-full flex-col items-center justify-between hero">
-        <div className="w-full flex flex-col items-center bg-gray-200 md:p-24 md:pt-0">
+      <div className="bg-center bg-cover flex max-h-[900px] w-full flex-col items-center justify-between hero">
+        <div className="w-full flex flex-col items-center bg-gray-200 md:p-24 md:pb-0 md:pt-0">
           <div className="mb-24 flex items-center justify-center pt-4">
             {/* detalhes ao redor do nome Winny O'Brien */}
             <Image
@@ -24,7 +27,7 @@ export default function Home() {
               alt="graphic detail"
             />
             <h1
-              className={`${cakelan.className} md:text-2xl text-sm font-bold md:mx-4 mx-2 whitespace-nowrap`}
+              className={`${cakelan.className} md:text-2xl text-sm md:mx-4 mx-2 whitespace-nowrap`}
             >
               Winny O'Brien
             </h1>
@@ -37,21 +40,19 @@ export default function Home() {
             />
           </div>
           <div className="flex w-full">
-            <div className="flex-grow w-full md:w-1/2 flex flex-col items-center text-center bg-gray-200 h-screen p-8 pt-0 ">
-              <div className="md:hidden h-[50%]"></div>
+            <div className="flex-grow w-full md:w-1/2 flex flex-col items-center text-center md:text-left bg-gray-200 h-screen p-8 pt-0 ">
+              <div className="md:hidden h-[40%]"></div>
               <h1
-                className={`${cakelan.className} md:text-5xl text-2xl font-bold my-4 max-w-[500px] leading-10 tracking-wider hero-call`}
+                className={`${cakelan.className} md:text-5xl text-2xl my-4 max-w-[500px] leading-10 hero-call`}
               >
-                cartas que susurram mistério, revelando o enigma de cada jornada
+                desperte sua espiritualidade adormecida
               </h1>
 
               <a
                 href="#tarot"
                 className="hover:bg-white transition-all hover:text-richBlack flex justify-around gap-2 md:text-xl text-xs border px-4 md:px-8 py-2 rounded-full"
               >
-                <span className="whitespace-nowrap">
-                  Clique aqui e adquira agora
-                </span>
+                <span className="whitespace-nowrap">conheça meus caminhos</span>
               </a>
             </div>
 
@@ -60,37 +61,7 @@ export default function Home() {
         </div>
         <div />
       </div>
-
-      <Testimonials />
-
-      <Image
-        src="/divider-detail.svg"
-        width={920}
-        height={2}
-        className="mt-20"
-        alt="Graphic detail"
-      />
-      <div className="flex justify-around items-center mt-2">
-        <Image
-          src="/star-detail.svg"
-          width={17}
-          height={17}
-          alt="Star detail"
-        />
-        <Image
-          src="/star-detail.svg"
-          width={30}
-          height={30}
-          alt="Star detail"
-        />
-        <Image
-          src="/star-detail.svg"
-          width={17}
-          height={17}
-          alt="Star detail"
-        />
-      </div>
-
+      <div className="transition"></div>
       <div className="relative flex w-full flex-col items-center justify-center mt-20 backdrop-opacity-30 backdrop-blur">
         <div className="md:p-24 md:pt-0 flex items-center w-full">
           <div className="hidden xl:block w-1/2">
@@ -105,7 +76,7 @@ export default function Home() {
           <div className="flex items-center justify-center xl:w-1/2 w-full">
             <div className="flex flex-col p-4">
               <h1
-                className={`${cakelan.className} md:text-3xl text-xl font-bold my-8 text-antiqueWhite `}
+                className={`${cakelan.className} md:text-3xl text-xl text-antiqueWhite mb-4`}
               >
                 UM POUCO DA MINHA HISTÓRIA
               </h1>
@@ -132,17 +103,6 @@ export default function Home() {
                 todos que desejam despertar o bruxo interior. Winny O'Brien é
                 mais do que uma leitora de Tarot, é uma guia em sua própria
                 jornada espiritual.
-              </p>
-
-              <p className="md:text-md text-sm mb-4">
-                Meu compromisso é proporcionar uma experiência transformadora,
-                capacitando-o a escrever sua própria história mágica. Neste
-                espaço, celebro a diversidade da espiritualidade e convido você
-                a explorar os recantos escondidos de sua alma. Juntos,
-                desvendaremos os mistérios da vida e acenderemos a chama
-                interior que o conduzirá a um despertar como bruxa. Seja
-                bem-vindo à sua jornada mágica, onde o poder de transformação
-                aguarda para guiá-lo a novos horizontes.
               </p>
               <a
                 href="https://www.instagram.com/winnyobrien/"
@@ -179,13 +139,95 @@ export default function Home() {
           </div>
         </div>
       </div>
-
+      <Testimonials />
+      <Image
+        src="/divider-detail.svg"
+        width={920}
+        height={2}
+        className="mt-20"
+        alt="Graphic detail"
+      />
+      <div className="flex justify-around items-center mt-2">
+        <Image
+          src="/star-detail.svg"
+          width={17}
+          height={17}
+          alt="Star detail"
+        />
+        <Image
+          src="/star-detail.svg"
+          width={30}
+          height={30}
+          alt="Star detail"
+        />
+        <Image
+          src="/star-detail.svg"
+          width={17}
+          height={17}
+          alt="Star detail"
+        />
+      </div>
       <Carousel />
-
+      <div className="w-full max-w-5xl flex flex-col justify-center md:px-16 p-4 pb-8 md:pb-32">
+        <h1
+          className={`${cakelan.className} md:text-3xl text-xl my-4 text-antiqueWhite`}
+        >
+          atendimentos energéticos
+        </h1>
+        <p>
+          Na arte do tarot, as tiragens representam uma técnica valiosa e
+          personalizada para interpretas as cartas, proporcionando insights
+          específicos sobre questõẽs ou áreas da vida. Cada disposicão das
+          cartas tem um significado único, permitindo que em uma tiragem nós
+          mergulhemos em sua situacão e alcancemos uma visão mais abrangente.
+        </p>
+        <div className="flex flex-col lg:flex-row items-center justify-center mt-6 gap-4 xl:max-w-5xl">
+          <div
+            className="flex flex-col items-center w-[300px] h-[450px] md:w-[402px] md:h-[603px] relative bg-center bg-cover text-richBlack"
+            style={{ backgroundImage: "url(/card-1.png)" }}
+          >
+            <div className="absolute bottom-4 md:bottom-10 left-4">
+              <h1
+                className={`${cakelan.className} mt-2 md:mt-4 md:text-xl text-antiqueWhite md:mb-2`}
+              >
+                Volte a si mesmo
+              </h1>
+              <button
+                type="button"
+                // animation
+                className="bg-opacity-90 hover:bg-opacity-100 transition-all
+                  md:bottom-20 px-8 py-2 rounded-full bg-white text-richBlack text-xs font-bold shadow-lg" // style
+              >
+                SAIBA MAIS
+              </button>
+            </div>
+          </div>
+          <div
+            className="flex flex-col items-center w-[300px] h-[450px] md:w-[402px] md:h-[603px] relative bg-center bg-cover text-richBlack"
+            style={{ backgroundImage: "url(/card-2.png)" }}
+          >
+            <div className="absolute bottom-4 md:bottom-10 left-4">
+              <h1
+                className={`${cakelan.className} mt-2 md:mt-4 md:text-xl text-antiqueWhite md:mb-2`}
+              >
+                Atendimento vip
+              </h1>
+              <button
+                type="button"
+                // animation
+                className="bg-opacity-90 hover:bg-opacity-100 transition-all
+                  md:bottom-20 px-8 py-2 rounded-full bg-white text-richBlack text-xs font-bold shadow-lg" // style
+              >
+                SAIBA MAIS
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="relative min-h-[700px] w-full max-w-7xl flex flex-col lg:flex-row items-start justify-center md:px-16 p-4 pt-2 pb-32">
         <div className="p-0 md:p-4">
           <h1
-            className={`${cakelan.className} md:text-3xl text-xl font-bold my-4 text-antiqueWhite`}
+            className={`${cakelan.className} md:text-3xl text-xl my-4 text-antiqueWhite`}
           >
             ATENDIMENTO PRESENCIAL
           </h1>
@@ -203,9 +245,9 @@ export default function Home() {
             alt="mapa com a localizacão do atendimento presencial"
           />
         </div>
-        <div className="p-0 md:p-4">
+        <div className="p-0 md:p-4 ">
           <h1
-            className={`${cakelan.className} md:text-3xl text-xl font-bold my-4 text-antiqueWhite`}
+            className={`${cakelan.className} md:text-3xl text-xl my-4 text-antiqueWhite`}
           >
             PREFERE UM ATENDIMENTO MAIS INTIMISTA?
           </h1>
@@ -215,7 +257,7 @@ export default function Home() {
             Fernando Machado 513.
           </p>
           <h1
-            className={`${cakelan.className} md:text-3xl text-xl font-bold my-4 text-antiqueWhite`}
+            className={`${cakelan.className} md:text-3xl text-xl my-4 text-antiqueWhite`}
           >
             MAIS ALGUMA DÚVIDA?
           </h1>

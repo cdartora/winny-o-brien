@@ -35,7 +35,6 @@ body {
 
 .hero-call {
   line-height: 1.1em;
-  letter-spacing: 0.1em;
 }
 
 .carousel {
@@ -52,4 +51,10 @@ body {
 
 .carousel::-webkit-scrollbar {
   display: none;
+}
+
+.transition {
+  height: 20vh;
+  width: 100%;
+  background: linear-gradient(#070708, #071d21);
 }
