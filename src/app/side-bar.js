@@ -3,7 +3,7 @@ import Image from "next/image";
 const SideBar = ({ children }) => {
   return (
     <>
-      <div className="fixed z-10 bottom-0 left-0 pl-3 pb-3 md:pl-8 md:pb-8 flex flex-col justify-end items-center gap-6">
+      <nav className="fixed z-10 bottom-0 left-0 pl-3 pb-3 md:pl-8 md:pb-8 flex flex-col justify-end items-center gap-6">
         <a
           href="https://www.threads.net/@winnyobrien"
           target="_blank"
@@ -30,7 +30,7 @@ const SideBar = ({ children }) => {
         >
           <Image src="/insta.svg" alt="Instagram logo" width="42" height="42" />
         </a>
-      </div>
+      </nav>
       {children}
     </>
   );
