@@ -105,7 +105,7 @@ function Testimonials() {
                   onClick={() => {
                     setIsOpen(true);
                   }}
-                  className="mt-4 w-1/4 hover:bg-white transition-all hover:text-richBlack flex justify-center gap-2 md:text-md text-xs border px-4 md:px-8 py-2 rounded-full"
+                  className="mt-4 md:w-1/4 hover:bg-white transition-all hover:text-richBlack flex justify-center gap-2 md:text-md text-xs border px-4 md:px-8 py-2 rounded-full"
                 >
                   <span className="whitespace-nowrap">Explorar</span>
                 </button>
