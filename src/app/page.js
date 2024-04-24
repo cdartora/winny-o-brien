@@ -5,9 +5,6 @@ import Image from "next/image";
 import Testimonials from "./components/testimonials";
 import Carousel from "./components/carousel";
 
-import Card from "./components/card";
-import { cards } from "./components/carousel";
-
 const cakelan = localFont({ src: "./fonts/cakelan.woff" });
 export { cakelan };
 
@@ -113,29 +110,6 @@ export default function Home() {
                 <span className="whitespace-nowrap">Veja meu instagram</span>
               </a>
             </div>
-            {/* <div className="flex flex-col h-screen">
-              <Image
-                src="/name_detail_2.svg"
-                width={3}
-                height={200}
-                className="rotate-90"
-                alt="graphic detail"
-              />
-
-              <Image
-                src="/star-detail.svg"
-                width={50}
-                height={50}
-                alt="Star detail"
-              />
-              <Image
-                src="/name_detail.svg"
-                width={3}
-                height={200}
-                className="rotate-90"
-                alt="graphic detail"
-              />
-            </div> */}
           </div>
         </div>
       </div>
