@@ -1,8 +1,10 @@
 import { Transition, Dialog } from "@headlessui/react";
+import Image from "next/image";
 import { Fragment } from "react";
 import { cakelan } from "../page";
 
-export default function Checkout({ isOpen, closeCheckout }) {
+export default function Checkout({ isOpen, closeCheckout, cardInfo }) {
+  const { name, text1, text2, duration, price, type, imgUrl } = cardInfo;
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-50" onClose={closeCheckout}>
@@ -22,7 +24,7 @@ export default function Checkout({ isOpen, closeCheckout }) {
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-y-auto">
-          <div className="flex min-h-full items-center justify-center p-4 text-center">
+          <div className="flex min-h-full items-center justify-center md:p-4 text-center">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -32,48 +34,63 @@ export default function Checkout({ isOpen, closeCheckout }) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-3xl overflow-y-auto max-h-[90vh] transform overflow-hidden rounded-2xl bg-backgroundWhite p-6 pt-2 text-left align-middle shadow-xl transition-all text-richBlack">
+              <Dialog.Panel className="relative w-full md:max-w-3xl overflow-y-auto md:max-h-[90vh] transform overflow-hidden md:rounded-2xl bg-backgroundWhite p-2 md:p-6 pt-2 text-left align-middle shadow-xl transition-all text-richBlack">
                 <Dialog.Title>
-                  <h3
-                    className={`${cakelan.className} mt-2 md:mt-4 md:text-lg text-center`}
-                  >
+                  <h3 className={`${cakelan.className} md:text-lg text-center`}>
                     Winny O&apos;Brien
                   </h3>
                 </Dialog.Title>
-                <div className="px-4 lg:px-24 mt-32">
+                <button
+                  type="button"
+                  className="fixed top-2 md:top-6 left-2 md:left-6 opacity-90 hover:opacity-100 transition-all"
+                  onClick={closeCheckout}
+                >
+                  <Image src="/back.svg" width={35} height={35} alt="voltar" />
+                </button>
+                <div className="my-2 flex justify-center">
+                  <Image src={imgUrl} width={150} height={150} alt={name} />
+                </div>
+
+                <div className="px-4 lg:px-24">
                   <h1
                     className={`${cakelan.className} text-2xl md:text-4xl text-center text-richBlack`}
                   >
-                    seu tempo com tarot
+                    {name}
                   </h1>
-                  <p className="font-medium text-sm mt-3">
-                    Na penumbra de uma sala silenciosa, cartas de tarô são
-                    dispostas com precisão sobre uma mesa de madeira antiga. As
-                    mãos cuidadosas do taólogo movem-se com uma mistura de
-                    reverência e concentração. Cada carta revela segredos do
-                    destino, susurrando histórias ocultas ao seu leitor.
-                  </p>
-                  <p className="font-thin text-sm mt-3">
-                    Na penumbra de uma sala silenciosa, cartas de tarô são
-                    dispostas com precisão sobre uma mesa de madeira antiga. As
-                    mãos cuidadosas do taólogo movem-se com uma mistura de
-                    reverência e concentração. Cada carta revela segredos do
-                    destino, susurrando histórias ocultas ao seu leitor.
-                  </p>
+                  <p className="font-medium text-sm mt-2">{text1}</p>
+                  <p className="font-thin text-sm mt-3">{text2}</p>
                   <div className="flex justify-center gap-4 mt-3">
-                    <div className="border-[1px] border-richBlack rounded-full px-2 md:px-6 py-2 font-semibold text-xs md:text-sm">
-                      R$ 150,00
+                    <div className="flex flex-col items-center md:flex-row gap-1 md:gap-2 border-[1px] border-richBlack rounded-xl md:rounded-full px-2 md:px-6 py-1 font-semibold text-xs md:text-sm">
+                      <Image
+                        src="/price.svg"
+                        width={30}
+                        height={30}
+                        alt="dollar bill"
+                      />
+                      <span className="whitespace-nowrap">R$ {price}</span>
                     </div>
 
-                    <div className="border-[1px] border-richBlack rounded-full px-2 md:px-6 py-2 font-semibold text-xs md:text-sm">
-                      Tarot
+                    <div className="flex flex-col items-center md:flex-row md:gap-2 border-[1px] border-richBlack rounded-xl md:rounded-full px-2 md:px-6 py-1 font-semibold text-xs md:text-sm">
+                      <Image
+                        src="/type.svg"
+                        width={30}
+                        height={30}
+                        alt="baralho de tarot"
+                      />
+                      <span className="whitespace-nowrap">{type}</span>
                     </div>
 
-                    <div className="border-[1px] border-richBlack rounded-full px-2 md:px-6 py-2 font-semibold text-xs md:text-sm">
-                      1h30min
+                    <div className="flex flex-col items-center md:flex-row md:gap-2 border-[1px] border-richBlack rounded-xl md:rounded-full px-2 md:px-6 py-1 font-semibold text-xs md:text-sm">
+                      <Image
+                        src="/duration.svg"
+                        width={30}
+                        height={30}
+                        alt="clock"
+                      />
+                      <span className="whitespace-nowrap">{duration}</span>
                     </div>
                   </div>
-                  <div className="flex justify-center mt-4">
+                  <div className="flex justify-center my-4">
                     <button
                       type="button"
                       className="bg-opacity-90 hover:bg-opacity-100 transition-all

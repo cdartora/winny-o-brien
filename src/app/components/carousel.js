@@ -6,44 +6,92 @@ export const cards = [
     number: "I",
     name: "SEU TEMPO COM TAROT",
     description:
+      "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
+    text1:
       "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
+    text2:
+      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
+    imgUrl: "tarot/1.svg",
+    duration: "1h30min",
+    price: 150,
+    type: "Tarot",
   },
   {
     number: "II",
     name: "CARREIRA PROFISSIONAL",
     description:
       "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
+    text1:
+      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
+    text2:
+      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
+    imgUrl: "tarot/2.svg",
+    duration: "1h30min",
+    price: 150,
+    type: "Tarot",
   },
   {
     number: "III",
     name: "ARE YOU MINE?",
     description:
       "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
+    text1:
+      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
+    text2:
+      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
+    imgUrl: "tarot/3.svg",
+    duration: "1h30min",
+    price: 150,
+    type: "Tarot",
   },
   {
     number: "IV",
     name: "TIRAGEM MENSAL",
     description:
       "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
+    text1:
+      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
+    text2:
+      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
+    imgUrl: "tarot/4.svg",
+    duration: "1h30min",
+    price: 150,
+    type: "Tarot",
   },
   {
     number: "V",
     name: "CICLOS DA SUA VIDA",
     description:
       "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
+    text1:
+      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
+    text2:
+      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
+    imgUrl: "tarot/5.svg",
+    duration: "1h30min",
+    price: 150,
+    type: "Tarot",
   },
   {
     number: "VI",
     name: "CLAREZA MENTAL",
     description:
       "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
+    text1:
+      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
+    text2:
+      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
+    imgUrl: "tarot/6.svg",
+    duration: "1h30min",
+    price: 150,
+    type: "Tarot",
   },
 ];
 
 function Carousel() {
   return (
     <div className="relative min-h-[700px] w-full max-w-5xl flex flex-col items-center justify-center md:px-16 p-4 pt-24 pb-8 md:pb-32">
-      <div id="tarot" className="p-0 p-4">
+      <div id="tarot">
         <h1
           className={`${cakelan.className} md:text-3xl text-xl my-4 text-antiqueWhite`}
         >

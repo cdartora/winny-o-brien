@@ -60,7 +60,11 @@ function Card({ cardInfo }) {
       </h1>
       {isOpen && (
         <>
-          <Checkout isOpen={isOpen} closeCheckout={closeCheckout} />
+          <Checkout
+            isOpen={isOpen}
+            closeCheckout={closeCheckout}
+            cardInfo={cardInfo}
+          />
         </>
       )}
     </div>
