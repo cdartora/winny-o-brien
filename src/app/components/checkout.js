@@ -36,7 +36,7 @@ export default function Checkout({ isOpen, closeCheckout, cardInfo }) {
             >
               <Dialog.Panel className="relative w-full md:max-w-3xl overflow-y-auto md:max-h-[90vh] transform overflow-hidden md:rounded-2xl bg-backgroundWhite p-2 md:p-6 pt-2 text-left align-middle shadow-xl transition-all text-richBlack">
                 <Dialog.Title>
-                  <h3 className={`${cakelan.className} md:text-lg text-center`}>
+                  <h3 className={`${cakelan.className} text-lg text-center`}>
                     Winny O&apos;Brien
                   </h3>
                 </Dialog.Title>
@@ -47,18 +47,18 @@ export default function Checkout({ isOpen, closeCheckout, cardInfo }) {
                 >
                   <Image src="/back.svg" width={35} height={35} alt="voltar" />
                 </button>
-                <div className="my-2 flex justify-center">
+                <div className="my-10 flex justify-center">
                   <Image src={imgUrl} width={150} height={150} alt={name} />
                 </div>
 
                 <div className="px-4 lg:px-24">
                   <h1
-                    className={`${cakelan.className} text-2xl md:text-4xl text-center text-richBlack`}
+                    className={`${cakelan.className} text-4xl text-center text-richBlack`}
                   >
                     {name}
                   </h1>
-                  <p className="font-medium text-sm mt-2">{text1}</p>
-                  <p className="font-thin text-sm mt-3">{text2}</p>
+                  <p className="mt-2">{text1}</p>
+                  <p className="mt-2">{text2}</p>
                   <div className="flex justify-center gap-4 mt-3">
                     <div className="flex flex-col items-center md:flex-row gap-1 md:gap-2 border-[1px] border-richBlack rounded-xl md:rounded-full px-2 md:px-6 py-1 font-semibold text-xs md:text-sm">
                       <Image
@@ -70,7 +70,7 @@ export default function Checkout({ isOpen, closeCheckout, cardInfo }) {
                       <span className="whitespace-nowrap">R$ {price}</span>
                     </div>
 
-                    <div className="flex flex-col items-center md:flex-row md:gap-2 border-[1px] border-richBlack rounded-xl md:rounded-full px-2 md:px-6 py-1 font-semibold text-xs md:text-sm">
+                    <div className="flex flex-col items-center md:flex-row md:gap-2 border-[1px] border-richBlack rounded-xl md:rounded-full px-2 md:px-6 py-1 font-semibold text-sm">
                       <Image
                         src="/type.svg"
                         width={30}
@@ -80,7 +80,7 @@ export default function Checkout({ isOpen, closeCheckout, cardInfo }) {
                       <span className="whitespace-nowrap">{type}</span>
                     </div>
 
-                    <div className="flex flex-col items-center md:flex-row md:gap-2 border-[1px] border-richBlack rounded-xl md:rounded-full px-2 md:px-6 py-1 font-semibold text-xs md:text-sm">
+                    <div className="flex flex-col items-center md:flex-row md:gap-2 border-[1px] border-richBlack rounded-xl md:rounded-full px-2 md:px-6 py-1 font-semibold text-sm">
                       <Image
                         src="/duration.svg"
                         width={30}
@@ -94,7 +94,7 @@ export default function Checkout({ isOpen, closeCheckout, cardInfo }) {
                     <button
                       type="button"
                       className="bg-opacity-90 hover:bg-opacity-100 transition-all
-          px-8 py-2 rounded-full bg-richBlack text-white text-xs font-bold shadow-lg" // style
+          px-8 py-2 rounded-full bg-richBlack text-white text-lg font-bold shadow-lg" // style
                     >
                       AGENDAR
                     </button>

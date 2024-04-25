@@ -92,9 +92,7 @@ function Carousel() {
   return (
     <div className="relative min-h-[700px] w-full max-w-5xl flex flex-col items-center justify-center md:px-16 p-4 pt-24 pb-8 md:pb-32">
       <div id="tarot">
-        <h1
-          className={`${cakelan.className} md:text-3xl text-xl my-4 text-antiqueWhite`}
-        >
+        <h1 className={`${cakelan.className} text-3xl my-4 text-antiqueWhite`}>
           consultas
         </h1>
         <p>
@@ -105,7 +103,7 @@ function Carousel() {
           mergulhemos em sua situacão e alcancemos uma visão mais abrangente.
         </p>
         <h1
-          className={`${cakelan.className} md:text-3xl text-xl mt-8 mb-4 text-antiqueWhite`}
+          className={`${cakelan.className} text-3xl mt-8 mb-4 text-antiqueWhite`}
         >
           ferramentas
         </h1>

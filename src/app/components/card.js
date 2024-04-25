@@ -28,20 +28,20 @@ function Card({ cardInfo }) {
       src="/card-layout.svg"
     >
       {/* numeracão */}
-      <h1 className={`${cakelan.className} mt-2 md:mt-4 md:text-xl`}>
+      <h1 className={`${cakelan.className} mt-4 md:mt-6 text-2xl md:text-3xl`}>
         {cardInfo.name}
       </h1>
 
       {/* grafismo e descricão da carta */}
-      <div className="flex flex-col pt-8 items-center justify-center">
-        <p className="text-center text-xs md:text-sm mt-4 md:mt-10 px-6 md:px-10 font-medium">
+      <div className="flex flex-col h-1/2 pt-8 items-center justify-center">
+        <p className="text-center text-xl mt-6 md:mt-14 px-8 md:px-10 font-medium">
           {cardInfo.description}
         </p>
         <button
           type="button"
           onClick={openCheckout}
           className="bg-opacity-90 hover:bg-opacity-100 transition-all
-          absolute bottom-14 md:bottom-20 px-8 py-2 rounded-full bg-richBlack text-white text-xs font-bold shadow-lg" // style
+          absolute bottom-20 md:bottom-28 px-8 py-2 rounded-full bg-richBlack text-white text-lg font-bold shadow-lg" // style
         >
           SAIBA MAIS
         </button>
@@ -53,9 +53,7 @@ function Card({ cardInfo }) {
       <h1 className={`${cakelan.className} mt-4 text-2xl md:text-4xl`}>
        */}
 
-      <h1
-        className={`${cakelan.className} text-lg md:text-4xl absolute bottom-2`}
-      >
+      <h1 className={`${cakelan.className} text-4xl absolute bottom-2`}>
         {cardInfo.number}
       </h1>
       {isOpen && (

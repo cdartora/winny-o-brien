@@ -59,7 +59,7 @@ function Testimonials() {
   return (
     <>
       <Gallery isOpen={isOpen} setIsOpen={setIsOpen} />
-      <div className="relative w-full max-w-5xl flex flex-col items-center justify-center md:px-16 p-4 pt-24 pb-32 mt-28 mb-[50px] ">
+      <div className="relative w-full min-h-[600px] max-w-5xl flex flex-col items-center justify-center md:px-16 p-4 pt-24 pb-32 mt-28 mb-[50px] ">
         <Image
           src="/quote-icon.svg"
           width={162}
@@ -93,7 +93,7 @@ function Testimonials() {
           <div className="flex flex-col justify-center items-center md:px-6 px-2">
             <div className="flex flex-col items-center justify-center">
               <h1
-                className={`${cakelan.className} text-center md:text-3xl text-2xl my-6 text-antiqueWhite`}
+                className={`${cakelan.className} text-center text-3xl my-6 text-antiqueWhite`}
               >
                 {testimonials[currentTestimonial].title}
               </h1>
@@ -105,7 +105,7 @@ function Testimonials() {
                   onClick={() => {
                     setIsOpen(true);
                   }}
-                  className="mt-4 md:w-1/4 hover:bg-white transition-all hover:text-richBlack flex justify-center gap-2 md:text-md text-xs border px-4 md:px-8 py-2 rounded-full"
+                  className="mt-4 md:w-1/4 hover:bg-white transition-all hover:text-richBlack flex justify-center gap-2 text-md border px-4 md:px-8 py-2 rounded-full"
                 >
                   <span className="whitespace-nowrap">Explorar</span>
                 </button>
