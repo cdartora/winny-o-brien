@@ -4,6 +4,8 @@ import Image from "next/image";
 
 import Testimonials from "./components/testimonials";
 import Carousel from "./components/carousel";
+import VipCard from "./components/vip-card";
+import { vip_cards } from "./data/cards";
 
 const cakelan = localFont({ src: "./fonts/cakelan.woff" });
 export { cakelan };
@@ -23,6 +25,7 @@ export default function Home() {
               className="hidden md:block"
               alt="graphic detail"
             />
+
             <h1
               className={`${cakelan.className} md:text-2xl text-sm md:mx-4 mx-2 whitespace-nowrap`}
             >
@@ -37,17 +40,17 @@ export default function Home() {
             />
           </div>
           <div className="flex w-full">
-            <div className="flex-grow w-full md:w-1/2 flex flex-col items-center text-center md:text-left bg-gray-200 h-screen p-8 pt-0 ">
+            <div className="flex-grow w-full md:w-1/2 flex flex-col items-center justify-center text-center bg-gray-200 min-h-[650px] p-8 pt-0 ">
               <div className="md:hidden h-[40%]"></div>
               <h1
-                className={`${cakelan.className} md:text-5xl text-2xl my-4 max-w-[500px] leading-10 hero-call`}
+                className={`${cakelan.className} text-5xl my-4 max-w-[500px] leading-10 hero-call`}
               >
                 desperte sua espiritualidade adormecida
               </h1>
 
               <a
                 href="#tarot"
-                className="hover:bg-white transition-all hover:text-richBlack flex justify-around gap-2 md:text-xl text-xs border px-4 md:px-8 py-2 rounded-full"
+                className="hover:bg-white transition-all hover:text-richBlack text-xl border px-4 md:px-8 py-2 rounded-full"
               >
                 <span className="whitespace-nowrap">conheça meus caminhos</span>
               </a>
@@ -59,25 +62,16 @@ export default function Home() {
         <div />
       </div>
       <div className="transition"></div>
-      <div className="relative flex w-full flex-col items-center justify-center mt-20 backdrop-opacity-30 backdrop-blur">
+      <div className="relative flex w-full flex-col max-w-5xl items-center justify-center mt-20 backdrop-opacity-30 backdrop-blur">
         <div className="md:p-24 md:pt-0 flex items-center w-full">
-          <div className="hidden xl:block w-1/2">
-            <Image
-              src="/about.png"
-              width={812}
-              height={928}
-              className="absolute left-0 -top-16"
-              alt="Winny O'Brien abrindo um leque com as cartas de tarot e uma bola de cristal."
-            />
-          </div>
-          <div className="flex items-center justify-center xl:w-1/2 w-full">
+          <div className="flex items-center justify-center w-full">
             <div className="flex flex-col p-4">
               <h1
-                className={`${cakelan.className} md:text-3xl text-xl text-antiqueWhite mb-4`}
+                className={`${cakelan.className} text-3xl text-antiqueWhite mb-4`}
               >
-                UM POUCO DA MINHA HISTÓRIA
+                QUEM SOU EU
               </h1>
-              <p className="md:text-md text-sm mb-4">
+              <p className="text-base mb-4">
                 Bem-vindo ao mágico universo de Winny O'Brien, onde a sabedoria
                 ancestral encontra o toque contemporâneo. Minha jornada começou
                 como uma trama tecida pelo destino, guiada pelas cartas do Tarot
@@ -87,7 +81,7 @@ export default function Home() {
                 dos feitiços, desvendando os segredos que permeiam o tecido do
                 universo.
               </p>
-              <p className="md:text-md text-sm mb-4">
+              <p className="text-base mb-4">
                 Em minha carreira como bruxa, busco compartilhar esse
                 conhecimento ancestral de uma maneira única e envolvente. Cada
                 consulta de Tarot é uma jornada única, uma exploração íntima dos
@@ -105,9 +99,9 @@ export default function Home() {
                 href="https://www.instagram.com/winnyobrien/"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:bg-white transition-all hover:text-richBlack flex justify-around self-end gap-2 md:text-xl text-xs border px-4 md:px-8 py-2 rounded-full place-self-start"
+                className="hover:bg-white transition-all hover:text-richBlack flex justify-around self-end gap-2 text-xl border px-4 md:px-8 py-2 rounded-full place-self-start"
               >
-                <span className="whitespace-nowrap">Veja meu instagram</span>
+                Mais sobre mim
               </a>
             </div>
           </div>
@@ -143,9 +137,7 @@ export default function Home() {
       </div>
       <Carousel />
       <div className="w-full max-w-5xl flex flex-col justify-center md:px-16 p-4 pb-8 md:pb-32">
-        <h1
-          className={`${cakelan.className} md:text-3xl text-xl my-4 text-antiqueWhite`}
-        >
+        <h1 className={`${cakelan.className} text-3xl my-4 text-antiqueWhite`}>
           atendimentos energéticos
         </h1>
         <p>
@@ -156,52 +148,22 @@ export default function Home() {
           mergulhemos em sua situacão e alcancemos uma visão mais abrangente.
         </p>
         <div className="flex flex-col lg:flex-row items-center justify-center mt-6 gap-4 xl:max-w-5xl">
-          <div
-            className="flex flex-col items-center w-[300px] h-[450px] md:w-[402px] md:h-[603px] relative bg-center bg-cover text-richBlack"
-            style={{ backgroundImage: "url(/card-1.png)" }}
-          >
-            <div className="absolute bottom-4 md:bottom-10 left-4">
-              <h1
-                className={`${cakelan.className} mt-2 md:mt-4 md:text-xl text-antiqueWhite md:mb-2`}
-              >
-                Volte a si mesmo
-              </h1>
-              <button
-                type="button"
-                // animation
-                className="bg-opacity-90 hover:bg-opacity-100 transition-all
-                  md:bottom-20 px-8 py-2 rounded-full bg-white text-richBlack text-xs font-bold shadow-lg" // style
-              >
-                SAIBA MAIS
-              </button>
-            </div>
-          </div>
-          <div
-            className="flex flex-col items-center w-[300px] h-[450px] md:w-[402px] md:h-[603px] relative bg-center bg-cover text-richBlack"
-            style={{ backgroundImage: "url(/card-2.png)" }}
-          >
-            <div className="absolute bottom-4 md:bottom-10 left-4">
-              <h1
-                className={`${cakelan.className} mt-2 md:mt-4 md:text-xl text-antiqueWhite md:mb-2`}
-              >
-                Atendimento vip
-              </h1>
-              <button
-                type="button"
-                // animation
-                className="bg-opacity-90 hover:bg-opacity-100 transition-all
-                  md:bottom-20 px-8 py-2 rounded-full bg-white text-richBlack text-xs font-bold shadow-lg" // style
-              >
-                SAIBA MAIS
-              </button>
-            </div>
-          </div>
+          <VipCard
+            backgroundImage="card-1.png"
+            cardInfo={vip_cards[0]}
+            title={vip_cards[0].name}
+          />
+          <VipCard
+            backgroundImage="card-2.png"
+            cardInfo={vip_cards[1]}
+            title={vip_cards[1].name}
+          />
         </div>
       </div>
       <div className="relative min-h-[700px] w-full max-w-7xl flex flex-col lg:flex-row items-start justify-center md:px-16 p-4 pt-2 pb-32">
         <div className="p-0 md:p-4">
           <h1
-            className={`${cakelan.className} md:text-3xl text-xl my-4 text-antiqueWhite`}
+            className={`${cakelan.className} text-3xl my-4 text-antiqueWhite`}
           >
             ATENDIMENTO PRESENCIAL
           </h1>
@@ -221,7 +183,7 @@ export default function Home() {
         </div>
         <div className="p-0 md:p-4 ">
           <h1
-            className={`${cakelan.className} md:text-3xl text-xl my-4 text-antiqueWhite`}
+            className={`${cakelan.className} text-3xl my-4 text-antiqueWhite`}
           >
             PREFERE UM ATENDIMENTO MAIS INTIMISTA?
           </h1>
@@ -231,7 +193,7 @@ export default function Home() {
             Fernando Machado 513.
           </p>
           <h1
-            className={`${cakelan.className} md:text-3xl text-xl my-4 text-antiqueWhite`}
+            className={`${cakelan.className} text-3xl my-4 text-antiqueWhite`}
           >
             MAIS ALGUMA DÚVIDA?
           </h1>
