@@ -78,7 +78,7 @@ function Testimonials() {
         <div className="flex justify-center items-center md:min-h-[400px]">
           <div className="min-w-12 hidden md:block">
             <button
-              className="bg-transparent hover:bg-white transition-all text-black rounded-full"
+              className="bg-transparent transition-all text-black rounded-full"
               onClick={previosTestimonial}
             >
               <Image

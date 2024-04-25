@@ -34,7 +34,7 @@ function Card({ cardInfo }) {
 
       {/* grafismo e descricão da carta */}
       <div className="flex flex-col h-1/2 pt-8 items-center justify-center">
-        <p className="text-center text-xl mt-6 md:mt-14 px-8 md:px-10 font-medium">
+        <p className="text-center text-base md:text-xl mt-6 md:mt-14 px-8 md:px-10 font-medium">
           {cardInfo.description}
         </p>
         <button

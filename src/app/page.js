@@ -43,7 +43,7 @@ export default function Home() {
             <div className="flex-grow w-full md:w-1/2 flex flex-col items-center justify-center text-center bg-gray-200 min-h-[650px] p-8 pt-0 ">
               <div className="md:hidden h-[40%]"></div>
               <h1
-                className={`${cakelan.className} text-5xl my-4 max-w-[500px] leading-10 hero-call`}
+                className={`${cakelan.className} text-3xl md:text-5xl my-4 max-w-[500px] leading-10 hero-call`}
               >
                 desperte sua espiritualidade adormecida
               </h1>
