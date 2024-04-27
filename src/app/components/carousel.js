@@ -1,92 +1,7 @@
 import Card from "./card";
 import { cakelan } from "../page";
+import { cards } from "../data/cards";
 
-export const cards = [
-  {
-    number: "I",
-    name: "SEU TEMPO COM TAROT",
-    description:
-      "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
-    text1:
-      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
-    text2:
-      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
-    imgUrl: "tarot/1.svg",
-    duration: "1h30min",
-    price: 150,
-    type: "Tarot",
-  },
-  {
-    number: "II",
-    name: "CARREIRA PROFISSIONAL",
-    description:
-      "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
-    text1:
-      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
-    text2:
-      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
-    imgUrl: "tarot/2.svg",
-    duration: "1h30min",
-    price: 150,
-    type: "Tarot",
-  },
-  {
-    number: "III",
-    name: "ARE YOU MINE?",
-    description:
-      "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
-    text1:
-      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
-    text2:
-      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
-    imgUrl: "tarot/3.svg",
-    duration: "1h30min",
-    price: 150,
-    type: "Tarot",
-  },
-  {
-    number: "IV",
-    name: "TIRAGEM MENSAL",
-    description:
-      "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
-    text1:
-      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
-    text2:
-      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
-    imgUrl: "tarot/4.svg",
-    duration: "1h30min",
-    price: 150,
-    type: "Tarot",
-  },
-  {
-    number: "V",
-    name: "CICLOS DA SUA VIDA",
-    description:
-      "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
-    text1:
-      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
-    text2:
-      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
-    imgUrl: "tarot/5.svg",
-    duration: "1h30min",
-    price: 150,
-    type: "Tarot",
-  },
-  {
-    number: "VI",
-    name: "CLAREZA MENTAL",
-    description:
-      "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
-    text1:
-      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
-    text2:
-      "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
-    imgUrl: "tarot/6.svg",
-    duration: "1h30min",
-    price: 150,
-    type: "Tarot",
-  },
-];
 
 function Carousel() {
   return (
@@ -117,9 +32,6 @@ function Carousel() {
         {cards.map((currentCard) => (
           <Card cardInfo={currentCard} key={currentCard} />
         ))}
-        {/* cards vazios para poder centralizar o ultimo card */}
-        <div className="w-[300px] h-[450px] md:w-[402px] md:h-[603px]"></div>
-        <div className="w-[300px] h-[450px] md:w-[402px] md:h-[603px]"></div>
       </div>
     </div>
   );

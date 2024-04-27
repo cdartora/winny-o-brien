@@ -1,6 +1,7 @@
+import { Fragment } from "react";
 import { Transition, Dialog } from "@headlessui/react";
 import Image from "next/image";
-import { Fragment } from "react";
+
 import { cakelan } from "../page";
 
 export default function Checkout({ isOpen, closeCheckout, cardInfo }) {
@@ -34,7 +35,7 @@ export default function Checkout({ isOpen, closeCheckout, cardInfo }) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="relative w-full md:max-w-3xl overflow-y-auto md:max-h-[90vh] transform overflow-hidden md:rounded-2xl bg-backgroundWhite p-2 md:p-6 pt-2 text-left align-middle shadow-xl transition-all text-richBlack">
+              <Dialog.Panel className="relative flex flex-col justify-between w-full h-screen md:max-w-3xl overflow-y-auto md:max-h-[90vh] transform overflow-hidden md:rounded-2xl bg-backgroundWhite p-2 md:p-6 pt-2 text-left align-middle shadow-xl transition-all text-richBlack">
                 <Dialog.Title>
                   <h3 className={`${cakelan.className} text-lg text-center`}>
                     Winny O&apos;Brien
@@ -59,47 +60,51 @@ export default function Checkout({ isOpen, closeCheckout, cardInfo }) {
                   </h1>
                   <p className="mt-2">{text1}</p>
                   <p className="mt-2">{text2}</p>
-                  <div className="flex justify-center gap-4 mt-3">
-                    <div className="flex flex-col items-center md:flex-row gap-1 md:gap-2 border-[1px] border-richBlack rounded-xl md:rounded-full px-2 md:px-6 py-1 font-semibold text-xs md:text-sm">
-                      <Image
-                        src="/price.svg"
-                        width={30}
-                        height={30}
-                        alt="dollar bill"
-                      />
-                      <span className="whitespace-nowrap">R$ {price}</span>
-                    </div>
-
-                    <div className="flex flex-col items-center md:flex-row md:gap-2 border-[1px] border-richBlack rounded-xl md:rounded-full px-2 md:px-6 py-1 font-semibold text-sm">
-                      <Image
-                        src="/type.svg"
-                        width={30}
-                        height={30}
-                        alt="baralho de tarot"
-                      />
-                      <span className="whitespace-nowrap">{type}</span>
-                    </div>
-
-                    <div className="flex flex-col items-center md:flex-row md:gap-2 border-[1px] border-richBlack rounded-xl md:rounded-full px-2 md:px-6 py-1 font-semibold text-sm">
-                      <Image
-                        src="/duration.svg"
-                        width={30}
-                        height={30}
-                        alt="clock"
-                      />
-                      <span className="whitespace-nowrap">{duration}</span>
-                    </div>
-                  </div>
-                  <div className="flex justify-center my-4">
-                    <button
-                      type="button"
-                      className="bg-opacity-90 hover:bg-opacity-100 transition-all
-          px-8 py-2 rounded-full bg-richBlack text-white text-lg font-bold shadow-lg" // style
-                    >
-                      AGENDAR
-                    </button>
-                  </div>
+                  {/* detalhes e agendar */}
                 </div>
+                  <div className="self-end w-full">
+                    <div className="flex justify-center gap-4 mt-3">
+                      <div className="flex flex-col items-center justify-center md:flex-row gap-1 md:gap-2 border-[1px] border-richBlack rounded-xl md:rounded-full px-2 md:px-6 py-1 font-semibold text-xs md:text-sm">
+                        <Image
+                          src="/price.svg"
+                          width={30}
+                          height={30}
+                          alt="dollar bill"
+                        />
+                        <span className="whitespace-nowrap">R$ {price}</span>
+                      </div>
+
+                      <div className="flex flex-col items-center md:flex-row md:gap-2 border-[1px] border-richBlack rounded-xl md:rounded-full px-2 md:px-6 py-1 font-semibold text-sm">
+                        <Image
+                          src="/type.svg"
+                          width={30}
+                          height={30}
+                          alt="baralho de tarot"
+                        />
+                        <span className="whitespace-nowrap">{type}</span>
+                      </div>
+
+                      <div className="flex flex-col items-center md:flex-row md:gap-2 border-[1px] border-richBlack rounded-xl md:rounded-full px-2 md:px-6 py-1 font-semibold text-sm">
+                        <Image
+                          src="/duration.svg"
+                          width={30}
+                          height={30}
+                          alt="clock"
+                        />
+                        <span className="whitespace-nowrap">{duration}</span>
+                      </div>
+                    </div>
+                    <div className="flex justify-center my-4">
+                      <button
+                        type="button"
+                        className="bg-opacity-90 hover:bg-opacity-100 transition-all px-8 py-2 rounded-full bg-richBlack text-white text-lg font-bold shadow-lg"
+                      >
+                        AGENDAR
+                      </button>
+                    </div>
+
+
+                  </div>
               </Dialog.Panel>
             </Transition.Child>
           </div>
