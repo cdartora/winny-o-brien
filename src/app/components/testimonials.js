@@ -10,6 +10,11 @@ import { cakelan } from "../page";
 
 const testimonials = [
   {
+    title: "galeria de depoimentos",
+    testimonial:
+      "Descubra um pouco mais as experiências proporcionadas pelas sessões de Winny",
+  },
+  {
     title: "Clareza Mental, Tiragens e Banhos",
     testimonial:
       "O trabalho da Winny é muito sério e vai muito além do que só uma tiragem, ela traz um atendimento humanizado trazendo total clareação para a minha vida, sou adota do tarot, barras de acces e também dos banhos mágicos que ela faz com exclusividade e excelência. Deixo aqui o meu agradecimento por cuidar tão bem de mim, existe uma vida após os seus cuidados e ela é muito mais leve.",
@@ -28,11 +33,6 @@ const testimonials = [
     title: "ansiedade e leveza",
     testimonial:
       "Acordei me sentindo muito mais leve e tranquila depois da nossa sessão. Dormi super bem e acordei mais produtiva, amorosa e sentindo que a ansiedade que eu tava se dissipou. Pelo jeito de conduzir a sessão as cartas me deram muito mais clareza sobre como agir. Muito obrigada pelo trabalho e tua luz.",
-  },
-  {
-    title: "galeria de depoimentos",
-    testimonial:
-      "Descubra um pouco mais as experiências proporcionadas pelas sessões de Winny",
   },
 ];
 
@@ -100,7 +100,7 @@ function Testimonials() {
               <p className="text-center">
                 {testimonials[currentTestimonial].testimonial}
               </p>
-              {currentTestimonial == testimonials.length - 1 && (
+              {currentTestimonial == 0 && (
                 <button
                   onClick={() => {
                     setIsOpen(true);
@@ -126,9 +126,13 @@ function Testimonials() {
                 />
               </button>
 
-              <div
+              <Image
+                src="/more.svg"
+                alt="ícone de explorar"
+                width={12}
+                height={12}
                 className={clsx(
-                  "rounded-full bg-white w-[8px] h-[8px] md:h-2 md:w-2",
+                  "rounded-full w-[12px] h-[12px] md:h-2 md:w-2",
                   !(currentTestimonial === 0) && "opacity-50"
                 )}
               />
@@ -150,16 +154,13 @@ function Testimonials() {
                   !(currentTestimonial === 3) && "opacity-50"
                 )}
               />
-              <Image
-                src="/more.svg"
-                alt="ícone de explorar"
-                width={12}
-                height={12}
+              <div
                 className={clsx(
-                  "rounded-full w-[12px] h-[12px] md:h-2 md:w-2",
+                  "rounded-full bg-white w-[8px] h-[8px] md:h-2 md:w-2",
                   !(currentTestimonial === 4) && "opacity-50"
                 )}
               />
+
               <button
                 className="bg-transparent rounded-full"
                 onClick={nextTestimonial}
