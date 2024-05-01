@@ -62,49 +62,37 @@ export default function Checkout({ isOpen, closeCheckout, cardInfo }) {
                   <p className="mt-2">{text2}</p>
                   {/* detalhes e agendar */}
                 </div>
-                  <div className="self-end w-full">
-                    <div className="flex justify-center gap-4 mt-3">
-                      <div className="flex flex-col items-center justify-center md:flex-row gap-1 md:gap-2 border-[1px] border-richBlack rounded-xl md:rounded-full px-2 md:px-6 py-1 font-semibold text-xs md:text-sm">
-                        <Image
-                          src="/price.svg"
-                          width={30}
-                          height={30}
-                          alt="dollar bill"
-                        />
-                        <span className="whitespace-nowrap">R$ {price}</span>
-                      </div>
-
-                      <div className="flex flex-col items-center md:flex-row md:gap-2 border-[1px] border-richBlack rounded-xl md:rounded-full px-2 md:px-6 py-1 font-semibold text-sm">
-                        <Image
-                          src="/type.svg"
-                          width={30}
-                          height={30}
-                          alt="baralho de tarot"
-                        />
-                        <span className="whitespace-nowrap">{type}</span>
-                      </div>
-
-                      <div className="flex flex-col items-center md:flex-row md:gap-2 border-[1px] border-richBlack rounded-xl md:rounded-full px-2 md:px-6 py-1 font-semibold text-sm">
-                        <Image
-                          src="/duration.svg"
-                          width={30}
-                          height={30}
-                          alt="clock"
-                        />
-                        <span className="whitespace-nowrap">{duration}</span>
-                      </div>
-                    </div>
-                    <div className="flex justify-center my-4">
-                      <button
-                        type="button"
-                        className="bg-opacity-90 hover:bg-opacity-100 transition-all px-8 py-2 rounded-full bg-richBlack text-white text-lg font-bold shadow-lg"
-                      >
-                        AGENDAR
-                      </button>
+                <div className="self-end w-full">
+                  <div className="flex justify-center gap-4 mt-3">
+                    <div className="flex flex-col items-center justify-center md:flex-row gap-1 md:gap-2 border-[1px] border-richBlack rounded-xl md:rounded-full px-2 md:px-6 py-1 font-semibold text-xs md:text-sm">
+                      <Image
+                        src="/price.svg"
+                        width={30}
+                        height={30}
+                        alt="dollar bill"
+                      />
+                      <span className="whitespace-nowrap">R$ {price}</span>
                     </div>
 
-
+                    <div className="flex flex-col items-center md:flex-row md:gap-2 border-[1px] border-richBlack rounded-xl md:rounded-full px-2 md:px-6 py-1 font-semibold text-sm">
+                      <Image
+                        src="/duration.svg"
+                        width={30}
+                        height={30}
+                        alt="clock"
+                      />
+                      <span className="whitespace-nowrap">{duration}</span>
+                    </div>
                   </div>
+                  <div className="flex justify-center my-4">
+                    <button
+                      type="button"
+                      className="bg-opacity-90 hover:bg-opacity-100 transition-all px-8 py-2 rounded-full bg-richBlack text-white text-lg font-bold shadow-lg"
+                    >
+                      AGENDAR
+                    </button>
+                  </div>
+                </div>
               </Dialog.Panel>
             </Transition.Child>
           </div>

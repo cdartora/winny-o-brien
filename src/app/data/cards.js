@@ -1,6 +1,6 @@
 export const vip_cards = [
   {
-    name: "volte a si",
+    name: "volte pra si",
     text1:
       "A Cruz Celta é composta por dez cartas dispostas de maneira especíﬁca. No centro, a primeira carta representa o tema central da leitura.",
     text2:
@@ -54,7 +54,7 @@ export const cards = [
   },
   {
     number: "III",
-    name: "ARE YOU E?",
+    name: "ARE YOU MINE?",
     description:
       "Vamos analisar o que te impede de prosperar? Tenha uma ampla visão sobre a sua trajetória profissional objetivando a sua independência financeira.",
     text1:

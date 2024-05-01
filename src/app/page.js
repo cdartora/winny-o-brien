@@ -13,7 +13,10 @@ export { cakelan };
 export default function Home() {
   return (
     <main className="bg-richBlack flex flex-col items-center text-white overflow-hidden">
-      <div id="hero" className="bg-center bg-cover flex max-h-[900px] w-full flex-col items-center justify-between hero">
+      <div
+        id="hero"
+        className="bg-center bg-cover flex max-h-[900px] w-full flex-col items-center justify-between hero"
+      >
         <div className="w-full flex flex-col items-center bg-gray-200 md:p-24 md:pb-0 md:pt-0">
           <div className="mb-24 flex items-center justify-center pt-4">
             {/* detalhes ao redor do nome Winny O'Brien */}
@@ -61,7 +64,10 @@ export default function Home() {
         <div />
       </div>
       <div id="gradient" className="transition"></div>
-      <div id="about" className="relative flex w-full flex-col max-w-5xl items-center justify-center mt-20 backdrop-opacity-30 backdrop-blur">
+      <div
+        id="about"
+        className="relative flex w-full flex-col max-w-5xl items-center justify-center mt-20 backdrop-opacity-30 backdrop-blur"
+      >
         <div className="md:p-24 md:pt-0 flex items-center w-full">
           <div className="flex items-center justify-center w-full">
             <div className="flex flex-col p-4">
@@ -135,16 +141,21 @@ export default function Home() {
         />
       </div>
       <Carousel />
-      <div id="vip" className="w-full max-w-5xl flex flex-col justify-center md:px-16 p-4 pb-8 md:pb-32">
+      <div
+        id="vip"
+        className="w-full max-w-5xl flex flex-col justify-center md:px-16 p-4 pb-8 md:pb-32"
+      >
         <h1 className={`${cakelan.className} text-3xl my-4 text-antiqueWhite`}>
           atendimentos energéticos
         </h1>
         <p>
-          Na arte do tarot, as tiragens representam uma técnica valiosa e
-          personalizada para interpretas as cartas, proporcionando insights
-          específicos sobre questõẽs ou áreas da vida. Cada disposicão das
-          cartas tem um significado único, permitindo que em uma tiragem nós
-          mergulhemos em sua situacão e alcancemos uma visão mais abrangente.
+          Descubra o poderoso fluxo energético que une nossos corpos aos nossos
+          sentidos emocionais, proporcionando uma compreensão mais profunda da
+          vasta potência que nos cerca. <br />
+          Os atendimentos energéticos são um convite para explorar o
+          desenvolvimento da consciência, permitindo que você se reconcilie com
+          seu passado, potencialize seu presente e vislumbre um futuro mais
+          promissor.
         </p>
         <div className="flex flex-col lg:flex-row items-center justify-center mt-6 gap-4 xl:max-w-5xl">
           <VipCard
@@ -159,16 +170,19 @@ export default function Home() {
           />
         </div>
       </div>
-      <div id="contact" className="relative min-h-[700px] w-full max-w-7xl flex flex-col lg:flex-row items-start justify-center md:px-16 p-4 pt-2 pb-32">
+      <div
+        id="contact"
+        className="relative min-h-[700px] w-full max-w-7xl flex flex-col lg:flex-row items-start justify-center md:px-16 p-4 pt-2 pb-32"
+      >
         <div className="p-0 md:p-4">
           <h1
             className={`${cakelan.className} text-3xl my-4 text-antiqueWhite`}
           >
-            ATENDIMENTO PRESENCIAL
+            CONSULTAS PRESENCIAIS
           </h1>
           <p className="mb-4">
-            Além do serviço online, também faço atendimento presencial. O
-            trabalho é realizado no Café Mal Assombrado Poa, na Rua Cel.
+            Além do serviço online, também faço atendimento presencial. As
+            leituras são realizadas no Café Mal Assombrado Poa, na Rua Cel.
             Fernando Machado 513.
           </p>
           <Image
@@ -181,16 +195,6 @@ export default function Home() {
           />
         </div>
         <div className="p-0 md:p-4 ">
-          <h1
-            className={`${cakelan.className} text-3xl my-4 text-antiqueWhite`}
-          >
-            PREFERE UM ATENDIMENTO MAIS INTIMISTA?
-          </h1>
-          <p>
-            Além do serviço online, também faço atendimento presencial. O
-            trabalho é realizado no Café Mal Assombrado Poa, na Rua Cel.
-            Fernando Machado 513.
-          </p>
           <h1
             className={`${cakelan.className} text-3xl my-4 text-antiqueWhite`}
           >
