@@ -16,6 +16,15 @@
   }
 }
 
+p {
+  font-size: large;
+  margin-bottom: 16px;
+}
+h2 {
+  font-size: 2rem;
+  color: var(--antique-white);
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -24,17 +33,6 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
-
-.hero {
-  background-image: url(/home-desktop.png);
-  @media (max-width: 767px) {
-    background-image: url(/home-mobile.png);
-  }
-}
-
-.hero-call {
-  line-height: 1.1em;
 }
 
 .carousel {
@@ -58,3 +56,4 @@ body {
   width: 100%;
   background: linear-gradient(#070708, #071d21);
 }
+

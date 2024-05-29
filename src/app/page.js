@@ -1,118 +1,95 @@
-/* eslint-disable react/no-unescaped-entities */
-import localFont from "next/font/local";
 import Image from "next/image";
 
 import Testimonials from "./components/testimonials";
 import Carousel from "./components/carousel";
 import VipCard from "./components/vip-card";
-import { vip_cards } from "./data/cards";
 
+import { vip_cards } from "./data/cards";
+import "./page.css";
+
+import localFont from "next/font/local";
 const cakelan = localFont({ src: "./fonts/cakelan.woff" });
 export { cakelan };
 
 export default function Home() {
   return (
-    <main className="bg-richBlack flex flex-col items-center text-white overflow-hidden">
-      <div
-        id="hero"
-        className="bg-center bg-cover flex max-h-[900px] w-full flex-col items-center justify-between hero"
-      >
-        <div className="w-full flex flex-col items-center bg-gray-200 md:p-24 md:pb-0 md:pt-0">
-          <div className="mb-24 flex items-center justify-center pt-4">
-            {/* detalhes ao redor do nome Winny O'Brien */}
+    <main className="main-container">
+      <div id="hero" className="hero">
+        <div className="hero-inner">
+          <div className="hero-details">
             <Image
               src="/name_detail_2.svg"
               width={200}
               height={3}
-              className="hidden md:block"
+              className="hero-graphism"
               alt="graphic detail"
             />
-
-            <h1
-              className={`${cakelan.className} md:text-2xl text-sm md:mx-4 mx-2 whitespace-nowrap`}
-            >
-              Winny O'Brien
-            </h1>
+            <h3 className={`${cakelan.className} hero-name`}>
+              Winny O&apos;Brien
+            </h3>
             <Image
               src="/name_detail.svg"
               width={200}
               height={3}
-              className="hidden md:block"
+              className="hero-graphism"
               alt="graphic detail"
             />
           </div>
-          <div className="flex w-full">
-            <div className="flex-grow w-full md:w-1/2 flex flex-col items-center justify-center text-center bg-gray-200 min-h-[650px] p-8 pt-0 ">
-              <div className="md:hidden h-[40%]"></div>
-              <h1
-                className={`${cakelan.className} text-3xl md:text-5xl my-4 max-w-[500px] leading-10 hero-call`}
-              >
+          <div className="hero-content">
+            <div className="content-wrapper">
+              <h1 className={`${cakelan.className} hero-title`}>
                 desperte sua espiritualidade adormecida
               </h1>
 
-              <a
-                href="#tarot"
-                className="hover:bg-white transition-all hover:text-richBlack text-xl border px-4 md:px-8 py-2 rounded-full"
-              >
-                <span className="whitespace-nowrap">conheça meus caminhos</span>
+              <a href="#tarot" className="btn-primary whitespace-nowrap">
+                conheça meus caminhos
               </a>
             </div>
 
-            <div className="hidden md:block flex-grow w-1/2"></div>
-          </div>
-        </div>
-        <div />
-      </div>
-      <div id="gradient" className="transition"></div>
-      <div
-        id="about"
-        className="relative flex w-full flex-col max-w-5xl items-center justify-center mt-20 backdrop-opacity-30 backdrop-blur"
-      >
-        <div className="md:p-24 md:pt-0 flex items-center w-full">
-          <div className="flex items-center justify-center w-full">
-            <div className="flex flex-col p-4">
-              <h1
-                className={`${cakelan.className} text-3xl text-antiqueWhite mb-4`}
-              >
-                QUEM SOU EU
-              </h1>
-              <p className="text-base mb-4">
-                Bem-vindo ao mágico universo de Winny O'Brien, onde a sabedoria
-                ancestral encontra o toque contemporâneo. Minha jornada começou
-                como uma trama tecida pelo destino, guiada pelas cartas do Tarot
-                que, desde cedo, dançaram em minhas mãos como mensageiras do
-                desconhecido. Ao longo de minha trajetória, abracei a magia como
-                um chamado pessoal, mergulhando nas profundezas da bruxaria e
-                dos feitiços, desvendando os segredos que permeiam o tecido do
-                universo.
-              </p>
-              <p className="text-base mb-4">
-                Em minha carreira como bruxa, busco compartilhar esse
-                conhecimento ancestral de uma maneira única e envolvente. Cada
-                consulta de Tarot é uma jornada única, uma exploração íntima dos
-                caminhos que se abrem diante de nós. É uma experiência que vai
-                além das cartas, transcende o tempo e conecta os fios do
-                passado, presente e futuro em um tapete encantado de
-                possibilidades. Convido você a se juntar a mim nesta viagem
-                mágica, onde os segredos da bruxaria se entrelaçam com os
-                eventos do cotidiano, revelando um mundo de magia acessível a
-                todos que desejam despertar o bruxo interior. Winny O'Brien é
-                mais do que uma leitora de Tarot, é uma guia em sua própria
-                jornada espiritual.
-              </p>
-              <a
-                href="https://www.instagram.com/winnyobrien/"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:bg-white transition-all hover:text-richBlack flex justify-around self-end gap-2 text-xl border px-4 md:px-8 py-2 rounded-full place-self-start"
-              >
-                Mais sobre mim
-              </a>
-            </div>
+            <div className="spacer" />
           </div>
         </div>
       </div>
+
+      <div id="gradient" className="transition" />
+
+      <div id="about" className="about-container">
+        <div className="about">
+          <h2 className={`${cakelan.className} about-title`}>QUEM SOU EU</h2>
+          <p>
+            Bem-vindo ao mágico universo de Winny OBrien, onde a sabedoria
+            ancestral encontra o toque contemporâneo. Minha jornada começou como
+            uma trama tecida pelo destino, guiada pelas cartas do Tarot que,
+            desde cedo, dançaram em minhas mãos como mensageiras do
+            desconhecido. Ao longo de minha trajetória, abracei a magia como um
+            chamado pessoal, mergulhando nas profundezas da bruxaria e dos
+            feitiços, desvendando os segredos que permeiam o tecido do universo.
+          </p>
+          <p>
+            Em minha carreira como bruxa, busco compartilhar esse conhecimento
+            ancestral de uma maneira única e envolvente. Cada consulta de Tarot
+            é uma jornada única, uma exploração íntima dos caminhos que se abrem
+            diante de nós. É uma experiência que vai além das cartas, transcende
+            o tempo e conecta os fios do passado, presente e futuro em um tapete
+            encantado de possibilidades. Convido você a se juntar a mim nesta
+            viagem mágica, onde os segredos da bruxaria se entrelaçam com os
+            eventos do cotidiano, revelando um mundo de magia acessível a todos
+            que desejam despertar o bruxo interior. Winny OBrien é mais do que
+            uma leitora de Tarot, é uma guia em sua própria jornada espiritual.
+          </p>
+          <a
+            href="https://www.instagram.com/winnyobrien/"
+            target="_blank"
+            rel="noreferrer"
+            className="btn-primary about-btn"
+          >
+            mais sobre mim
+          </a>
+        </div>
+      </div>
+
       <Testimonials />
+
       <Image
         src="/divider-detail.svg"
         width={920}
@@ -120,6 +97,7 @@ export default function Home() {
         className="mt-20"
         alt="Graphic detail"
       />
+
       <div className="flex justify-around items-center mt-2">
         <Image
           src="/star-detail.svg"
@@ -140,7 +118,9 @@ export default function Home() {
           alt="Star detail"
         />
       </div>
+
       <Carousel />
+
       <div
         id="vip"
         className="w-full max-w-5xl flex flex-col justify-center md:px-16 p-4 pb-8 md:pb-32"
@@ -170,6 +150,7 @@ export default function Home() {
           />
         </div>
       </div>
+
       <div
         id="contact"
         className="relative min-h-[700px] w-full max-w-7xl flex flex-col lg:flex-row items-start justify-center md:px-16 p-4 pt-2 pb-32"
