@@ -41,7 +41,7 @@ export default function Home() {
                 desperte sua espiritualidade adormecida
               </h1>
 
-              <a href="#tarot" className="btn-primary whitespace-nowrap">
+              <a href="#tarot" className="btn-primary">
                 conheça meus caminhos
               </a>
             </div>
@@ -94,11 +94,11 @@ export default function Home() {
         src="/divider-detail.svg"
         width={920}
         height={2}
-        className="mt-20"
+        className="divider"
         alt="Graphic detail"
       />
 
-      <div className="flex justify-around items-center mt-2">
+      <div className="divider-details">
         <Image
           src="/star-detail.svg"
           width={17}

@@ -16,6 +16,10 @@
   }
 }
 
+a {
+  white-space: nowrap;
+}
+
 p {
   font-size: large;
   margin-bottom: 16px;

@@ -140,6 +140,40 @@
   color: var(--rich-black);
 }
 
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 24px;
+  position: fixed;
+  z-index: 10;
+  bottom: 0px;
+  left: 0px;
+  margin: 0 0 12px 12px;
+}
+
+.side-bar a {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  opacity: 0.6;
+  transition: all;
+}
+
+.side-bar a:hover {
+  opacity: 1;
+}
+
+.divider {
+  margin-top: 80px;
+}
+
+.divider-details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 8px;
+}
+
 @media (min-width: 768px) {
   .hero {
     background-image: url(/home-desktop.jpg);
@@ -166,5 +200,8 @@
   }
   .about {
     padding: 96px;
+  }
+  .side-bar {
+    margin: 0 0 32px 32px;
   }
 }
