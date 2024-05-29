@@ -6,13 +6,6 @@ import { cakelan } from "../page";
 function Gallery({ isOpen, closeGallery }) {
   const NUMBER_OF_SCREENSHOTS = 56;
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <ModalLayout isOpen={isOpen} close={closeGallery}>
       <h1 className={`${cakelan.className} gallery-title`}>
@@ -24,6 +17,7 @@ function Gallery({ isOpen, closeGallery }) {
             width={0}
             height={0}
             layout="responsive"
+            loading="lazy"
             key={index}
             src={`/testimonials/${index + 1}.jpg`}
             alt="whatsapp screenshot"
