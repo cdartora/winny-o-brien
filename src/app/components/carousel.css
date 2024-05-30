@@ -1,0 +1,121 @@
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 700px;
+  width: 100%;
+  max-width: 1024px;
+  padding: 16px;
+  margin: 80px 0 32px 0;
+}
+
+.carousel-container h2 {
+  margin: 32px 0 16px 0;
+  align-self: flex-start;
+}
+
+.carousel {
+  display: flex;
+  gap: 16px;
+  max-width: 90vw;
+  margin-top: 24px;
+  padding: 12px 600px;
+  scroll-snap-align: center;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 24px;
+  overflow-x: scroll;
+}
+
+.carousel > div {
+  flex-shrink: 0;
+  scroll-snap-align: center;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  height: 450px;
+  background-image: url("/card-layout.png");
+  background-position: center;
+  background-size: cover;
+  color: #071d21;
+  transition: transform 0.2s;
+  opacity: 0.7;
+  transform: scale(0.96);
+}
+
+.card:hover, .centered {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.card h3 {
+  margin-top: 16px;
+  font-size: 1.5rem;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50%;
+  padding-top: 32px;
+}
+
+.card button {
+  --tw-bg-opacity: 0.85;
+  transition: all;
+  position: absolute;
+  bottom: 80px;
+  padding: 8px 32px;
+  border-radius: 9999px;
+  background-color: var(--rich-black);
+  color: var(--background-white);
+  font-size: 1.125rem;
+  font-weight: 700;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.card button:hover {
+  --tw-bg-opacity: 0.95;
+}
+
+.number {
+  font-size: 2rem;
+  position: absolute;
+  bottom: 8px;
+}
+
+@media (min-width: 768px) {
+  .carousel-container {
+    padding: 16px 64px;
+    margin-bottom: 128px;
+  }
+  .card {
+    width: 402px;
+    height: 603px;
+  }
+  .card h3 {
+    margin-top: 24px;
+    font-size: 1.875rem;
+  }
+  .card button {
+    bottom: 112px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .carousel {
+    max-width: 1024px;
+  }
+
+}

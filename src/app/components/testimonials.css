@@ -14,7 +14,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 96px 16px;
+  padding: 128px 16px;
   margin: 112px 0 50px 0;
 }
 
@@ -35,10 +35,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.testimonials-inner h2 {
-  white-space: nowrap;
 }
 
 .btn-container {
@@ -150,15 +146,16 @@
   cursor: pointer;
 }
 
+
+
 @media (min-width: 768px) {
   .testimonials-container {
-    padding-left: 64px;
-    padding-right: 64px;
+    padding: 96px 64px;
   }
   .quote {
     left: 80px;
   }
-  .quote-reversed{
+  .quote-reversed {
     right: 80px;
   }
   .testimonials-inner {
@@ -180,4 +177,8 @@
   .gallery-title {
     font-size: 36px;
   }
+  .testimonials-inner h2 {
+    white-space: nowrap;
+  }
+
 }

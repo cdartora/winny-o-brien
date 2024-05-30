@@ -133,7 +133,7 @@ export default function Home() {
           sentidos emocionais, proporcionando uma compreensão mais profunda da
           vasta potência que nos cerca. <br />
           Os atendimentos energéticos são um convite para explorar o
-          desenvolvimento da consciência, permitindo que você se reconcilie com
+          desenvolvimento constante da consciência, permitindo que você se reconcilie com
           seu passado, potencialize seu presente e vislumbre um futuro mais
           promissor.
         </p>

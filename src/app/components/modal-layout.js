@@ -35,7 +35,7 @@ function ModalLayout({ isOpen, close, children }) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="flex flex-col items-center relative max-w-3xl overflow-y-auto md:max-h-[90vh] transform md:rounded-2xl bg-backgroundWhite p-2 pt-10 pb-4 text-left align-middle shadow-xl transition-all text-richBlack ">
+              <Dialog.Panel className="flex flex-col items-center relative max-w-3xl overflow-y-auto max-h-[100vh] md:max-h-[90vh] transform md:rounded-2xl bg-backgroundWhite p-2 pt-10 pb-4 text-left align-middle shadow-xl transition-all text-richBlack ">
                 <div className="gallery-header ">
                   <button
                     type="button"

@@ -53,7 +53,7 @@ export const cards = [
     number: "III",
     name: "ARE YOU MINE?",
     description:
-      "Está começando um novo relacionamento ou quer aprofundar o entendimento em um já existente? Descubra as respostas para suas perguntas mais íntimas sobre esse envolvimento especia",
+      "Está começando um novo relacionamento ou quer aprofundar o entendimento em um já existente? Descubra as respostas para suas perguntas mais íntimas sobre esse envolvimento especial.",
     text1:
       "Explore as possibilidades para o casal e identifique áreas que podem ser aprimoradas. Esta tiragem oferece insights sobre o futuro do relacionamento, o que precisa ser trabalhado e quais expectativas são realistas..",
     text2:
