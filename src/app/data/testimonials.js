@@ -7,7 +7,7 @@ export const testimonials = [
   {
     title: "Clareza Mental, Tiragens e Banhos",
     testimonial:
-      "O trabalho da Winny é muito sério e vai muito além do que só uma tiragem, ela traz um atendimento humanizado trazendo total clareação para a minha vida, sou adota do tarot, barras de acces e também dos banhos mágicos que ela faz com exclusividade e excelência. Deixo aqui o meu agradecimento por cuidar tão bem de mim, existe uma vida após os seus cuidados e ela é muito mais leve.",
+      "O trabalho da Winny é muito sério e vai muito além do que só uma tiragem, ela traz um atendimento humanizado trazendo total clareação para a minha vida, sou adepta do tarot, barras de acces e também dos banhos mágicos que ela faz com exclusividade e excelência. Deixo aqui o meu agradecimento por cuidar tão bem de mim, existe uma vida após os seus cuidados e ela é muito mais leve.",
   },
   {
     title: "Conforto na primeira sessão",
