@@ -7,7 +7,7 @@ function Gallery({ isOpen, closeGallery }) {
   const NUMBER_OF_SCREENSHOTS = 56;
 
   return (
-    <ModalLayout isOpen={isOpen} close={closeGallery}>
+    <ModalLayout title="Winny O&apos;Brien" isOpen={isOpen} close={closeGallery}>
       <h1 className={`${cakelan.className} gallery-title`}>
         Galeria de Depoimentos
       </h1>

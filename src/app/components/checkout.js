@@ -1,103 +1,157 @@
-import { Fragment } from "react";
-import { Transition, Dialog } from "@headlessui/react";
+"use client";
 import Image from "next/image";
-
-import { cakelan } from "../page";
+import ModalLayout from "./modal-layout";
+import { useState, useEffect } from "react";
+import clsx from "clsx";
+import "./checkout.css";
 
 export default function Checkout({ isOpen, closeCheckout, cardInfo }) {
-  const { name, text1, text2, duration, price, type, imgUrl } = cardInfo;
+  const [readingMethod, setReadingMethod] = useState("");
+  const [selectedDuration, setSelectedDuration] = useState(0);
+  const [price, setPrice] = useState(0);
+  const { name, descriptions, durations, imgUrl } = cardInfo;
+
+  // duration {title, description, time, price, imgUrl}
+  const updatePrice = (duration) => {
+    setPrice(duration.price);
+    setSelectedDuration(duration.time);
+  };
+
+  const generateWhatsAppLink = () => {
+    const phoneNumber = "555189430417"; // Insira o número de telefone completo no formato internacional
+    const message = `Olá,
+Gostaria de agendar uma leitura ${name}.
+Aqui estão os detalhes:
+
+**Método de Leitura:** ${readingMethod == "video" ? "Video Chamada" : "Áudio no Whatsapp"}
+**Duração:** ${selectedDuration} minutos
+`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const link = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    return link;
+  };
+
   return (
-    <Transition appear show={isOpen} as={Fragment}>
-      <Dialog as="div" className="relative z-50" onClose={closeCheckout}>
-        <Transition.Child
-          as={Fragment}
-          enter="ease-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <div
-            className="fixed inset-0 bg-richBlack/70"
-            aria-hidden="true"
-          ></div>
-        </Transition.Child>
+    <ModalLayout
+      isOpen={isOpen}
+      close={closeCheckout}
+      title={name}
+      checkout={true}
+      price={price}
+      link={generateWhatsAppLink()}
+    >
+      <div className="my-10 flex justify-center">
+        <Image src={imgUrl} width={150} height={150} alt={name} />
+      </div>
 
-        <div className="fixed inset-0 overflow-y-auto">
-          <div className="flex min-h-full items-center justify-center md:p-4 text-center">
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0 scale-95"
-              enterTo="opacity-100 scale-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
+      <div className="px-4">
+        {descriptions.map((text) => (
+          <p key={text} className="mt-2">
+            {text}
+          </p>
+        ))}
+      </div>
+      <div className="flex flex-col md:flex-row items-center justify-center gap-4 self-end px-4">
+        <div className="w-full">
+          <h3 className="text-lg mt-2">Escolha o Método de Leitura</h3>
+          <div className="my-2 flex flex-col md:flex-row gap-2">
+            <button
+              onClick={() => setReadingMethod("audio")}
+              className={clsx(
+                "method-selector",
+                readingMethod == "audio" && "selected"
+              )}
             >
-              <Dialog.Panel className="relative flex flex-col justify-between w-full h-screen md:max-w-3xl overflow-y-auto md:max-h-[90vh] transform overflow-hidden md:rounded-2xl bg-backgroundWhite p-2 md:p-6 pt-2 text-left align-middle shadow-xl transition-all text-richBlack">
-                <Dialog.Title>
-                  <h3 className={`${cakelan.className} text-lg text-center`}>
-                    Winny O&apos;Brien
-                  </h3>
-                </Dialog.Title>
-                <button
-                  type="button"
-                  className="fixed top-2 md:top-6 left-2 md:left-6 opacity-90 hover:opacity-100 transition-all"
-                  onClick={closeCheckout}
-                >
-                  <Image src="/back.svg" width={35} height={35} alt="voltar" />
-                </button>
-                <div className="my-10 flex justify-center">
-                  <Image src={imgUrl} width={150} height={150} alt={name} />
+              {readingMethod == "audio" ? (
+                <Image
+                  src="/audio-selected.svg"
+                  alt="auto-falante"
+                  width={30}
+                  height={30}
+                />
+              ) : (
+                <Image
+                  src="/audio.svg"
+                  alt="auto-falante"
+                  width={30}
+                  height={30}
+                />
+              )}
+              <div>
+                <h3>Leitura Assíncrona</h3>
+                <p className="text-sm">
+                  Receba sua leitura via áudio no WhatsApp para ouvir quando
+                  quiser.
+                </p>
+              </div>
+            </button>
+            <button
+              onClick={() => setReadingMethod("video")}
+              className={clsx(
+                "method-selector",
+                readingMethod == "video" && "selected"
+              )}
+            >
+              {readingMethod == "video" ? (
+                <Image
+                  src="/video-selected.svg"
+                  alt="auto-falante"
+                  width={30}
+                  height={30}
+                />
+              ) : (
+                <Image
+                  src="/video.svg"
+                  alt="auto-falante"
+                  width={30}
+                  height={30}
+                />
+              )}
+              <div>
+                <h4>Leitura Sincrona</h4>
+                <p className="text-sm">
+                  Realize sua leitura em uma videoconferência em tempo real.
+                </p>
+              </div>
+            </button>
+          </div>
+          <h3 className="text-lg mt-4">Escolha a Duração</h3>
+          <div className="my-2 flex flex-col md:flex-row gap-2">
+            {durations.map((duration) => (
+              <button
+                key={duration}
+                onClick={() => updatePrice(duration)}
+                className={clsx(
+                  "method-selector",
+                  selectedDuration == duration.time && "selected"
+                )}
+              >
+                {selectedDuration == duration.time ? (
+                  <Image
+                    src={`/${duration.image}-selected.svg`}
+                    alt="auto-falante"
+                    width={30}
+                    height={30}
+                  />
+                ) : (
+                  <Image
+                    src={`/${duration.image}.svg`}
+                    alt="auto-falante"
+                    width={30}
+                    height={30}
+                  />
+                )}
+                <div>
+                  <h3>{duration.title}</h3>
+                  <p className="text-sm">{duration.description}</p>
                 </div>
-
-                <div className="px-4 lg:px-24">
-                  <h1
-                    className={`${cakelan.className} text-4xl text-center text-richBlack`}
-                  >
-                    {name}
-                  </h1>
-                  <p className="mt-2">{text1}</p>
-                  <p className="mt-2">{text2}</p>
-                  {/* detalhes e agendar */}
-                </div>
-                <div className="self-end w-full">
-                  <div className="flex justify-center gap-4 mt-3">
-                    <div className="flex flex-col items-center justify-center md:flex-row gap-1 md:gap-2 border-[1px] border-richBlack rounded-xl md:rounded-full px-2 md:px-6 py-1 font-semibold text-xs md:text-sm">
-                      <Image
-                        src="/price.svg"
-                        width={30}
-                        height={30}
-                        alt="dollar bill"
-                      />
-                      <span className="whitespace-nowrap">R$ {price}</span>
-                    </div>
-
-                    <div className="flex flex-col items-center md:flex-row md:gap-2 border-[1px] border-richBlack rounded-xl md:rounded-full px-2 md:px-6 py-1 font-semibold text-sm">
-                      <Image
-                        src="/duration.svg"
-                        width={30}
-                        height={30}
-                        alt="clock"
-                      />
-                      <span className="whitespace-nowrap">{duration}</span>
-                    </div>
-                  </div>
-                  <div className="flex justify-center my-4">
-                    <button
-                      type="button"
-                      className="bg-opacity-90 hover:bg-opacity-100 transition-all px-8 py-2 rounded-full bg-richBlack text-white text-lg font-bold shadow-lg"
-                    >
-                      AGENDAR
-                    </button>
-                  </div>
-                </div>
-              </Dialog.Panel>
-            </Transition.Child>
+              </button>
+            ))}
           </div>
         </div>
-      </Dialog>
-    </Transition>
+      </div>
+    </ModalLayout>
   );
 }

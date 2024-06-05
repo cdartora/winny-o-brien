@@ -30,7 +30,7 @@ function Card({ cardInfo }) {
 
       <div className="content-container">
         <p className="text-center text-base md:text-xl mt-6 md:mt-14 px-8 md:px-10 font-medium">
-          {cardInfo.description}
+          {cardInfo.summary}
         </p>
       </div>
       <button type="button" onClick={openCheckout}>

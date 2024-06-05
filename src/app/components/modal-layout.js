@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Fragment, useRef } from "react";
 import { cakelan } from "../page";
 
-function ModalLayout({ isOpen, close, children }) {
+function ModalLayout({ isOpen, close, title, children, checkout, price, link }) {
   const modal = useRef(null);
 
   return (
@@ -35,11 +35,11 @@ function ModalLayout({ isOpen, close, children }) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="flex flex-col items-center relative max-w-3xl overflow-y-auto max-h-[100vh] md:max-h-[90vh] transform md:rounded-2xl bg-backgroundWhite p-2 pt-10 pb-4 text-left align-middle shadow-xl transition-all text-richBlack ">
+              <Dialog.Panel className="flex flex-col items-center relative max-w-3xl overflow-y-auto max-h-full md:max-h-[90vh] transform md:rounded-2xl bg-backgroundWhite p-2 pb-2 pt-12 text-left align-middle shadow-xl transition-all text-richBlack ">
                 <div className="gallery-header ">
                   <button
                     type="button"
-                    className="opacity-90 hover:opacity-100 transition-all ml-2"
+                    className="fixed left-2 top-2 opacity-90 hover:opacity-100 transition-all"
                     onClick={close}
                   >
                     <Image
@@ -50,15 +50,28 @@ function ModalLayout({ isOpen, close, children }) {
                     />
                   </button>
                   <h3
-                    className={`${cakelan.className} md:text-lg text-center modal-title grow`}
+                    className={`${cakelan.className} absolute top-3 md:text-lg text-center modal-title grow`}
                   >
-                    Winny O&apos;Brien
+                    {title}
                   </h3>
                 </div>
 
                 <div ref={modal} className="px-4 overflow-y-scroll">
                   {children}
                 </div>
+
+                {checkout && (
+                  <div className="flex justify-end w-full px-2">
+                    <a
+                      href={link}
+                      target="_blank"
+                      className="cursor-pointer bg-opacity-90 hover:bg-opacity-100 transition-all px-8 py-2 rounded-full bg-richBlack text-white text-lg shadow-lg my-2"
+                    >
+                      <span className="whitespace-nowrap">R$ {price} | </span>
+                      AGENDAR
+                    </a>
+                  </div>
+                )}
               </Dialog.Panel>
             </Transition.Child>
           </div>
