@@ -24,11 +24,11 @@ export default function VipCard({ backgroundImage, title, cardInfo }) {
         <Image
           src="./vip-detail.svg"
           alt=""
-          width={260}
-          height={444}
-          className="absolute z-20 top-4"
+          width={0}
+          height={0}
+          className="absolute z-20 top-4 w-[260px] md:w-[360px] h-[208px] md:h-[290px]"
         />
-        <h3 className={`${cakelan.className} text-white text-4xl mt-4`}>W</h3>
+        <h3 className={`${cakelan.className} text-white text-4xl mt-4 md:mt-6`}>W</h3>
         <div className="z-30 absolute bottom-4 md:bottom-10 left-4">
           <h1
             className={`${cakelan.className} mt-2 md:mt-4 text-2xl text-white md:mb-2`}
