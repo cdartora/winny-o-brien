@@ -71,15 +71,7 @@ export default function ContactForm() {
         onChange={handleChange}
         className="w-full h-44 bg-richBlack border-[1px] rounded-tl-lg p-2"
       />
-      <div className="w-full flex items-center gap-2">
-        {submitSuccess && (
-          <p className="text-green-500 mt-4">Email enviado com sucesso!</p>
-        )}
-        {!submitSuccess && (
-          <p className="text-red-500 mt-4">
-            Erro ao enviar o email. Tente novamente.
-          </p>
-        )}
+
 
         <button
           type="submit"
@@ -92,7 +84,14 @@ export default function ContactForm() {
             {isSubmitting ? "Enviando..." : "Enviar"}
           </span>
         </button>
-      </div>
+        {submitSuccess ==true && (
+          <p className="text-green-500 mt-4">Email enviado com sucesso!</p>
+        )}
+        {submitSuccess == false && (
+          <p className="text-red-500 mt-4">
+            Erro ao enviar o email. Tente novamente.
+          </p>
+        )}
     </form>
   );
 }
