@@ -2,8 +2,18 @@ import { Dialog, Transition } from "@headlessui/react";
 import Image from "next/image";
 import { Fragment, useRef } from "react";
 import { cakelan } from "../page";
+import clsx from "clsx";
 
-function ModalLayout({ isOpen, close, title, children, checkout, price, link }) {
+function ModalLayout({
+  isOpen,
+  close,
+  title,
+  children,
+  checkout,
+  price,
+  link,
+  isFormValid,
+}) {
   const modal = useRef(null);
 
   return (
@@ -62,14 +72,17 @@ function ModalLayout({ isOpen, close, title, children, checkout, price, link }) 
 
                 {checkout && (
                   <div className="flex justify-end w-full px-2">
-                    <a
-                      href={link}
-                      target="_blank"
-                      className="cursor-pointer bg-opacity-90 hover:bg-opacity-100 transition-all px-8 py-2 rounded-full bg-richBlack text-white text-lg shadow-lg my-2"
+                    <button
+                      onClick={() => (window.location.href = link)}
+                      className={clsx(
+                        "justify-end bg-opacity-90 hover:bg-opacity-100 transition-all px-8 py-2 rounded-full bg-richBlack text-white text-lg shadow-lg my-2",
+                        isFormValid ? "" : "opacity-50 cursor-not-allowed"
+                      )}
+                      disabled={!isFormValid}
                     >
-                      <span className="whitespace-nowrap">R$ {price} | </span>
-                      AGENDAR
-                    </a>
+                      <span className="whitespace-nowrap">R$ {price} |</span>
+                      <span> AGENDAR</span>
+                    </button>
                   </div>
                 )}
               </Dialog.Panel>
