@@ -60,7 +60,7 @@ Aqui estão os detalhes:
             <button
               onClick={() => setReadingMethod("audio")}
               className={clsx(
-                "method-selector",
+                "method-selector md:w-1/2",
                 readingMethod == "audio" && "selected"
               )}
             >
@@ -90,7 +90,7 @@ Aqui estão os detalhes:
             <button
               onClick={() => setReadingMethod("video")}
               className={clsx(
-                "method-selector",
+                "method-selector md:w-1/2",
                 readingMethod == "video" && "selected"
               )}
             >
@@ -118,7 +118,7 @@ Aqui estão os detalhes:
             </button>
           </div>
           <h3 className="text-lg mt-4">Escolha a Duração</h3>
-          <div className="my-2 flex flex-col md:flex-row gap-2">
+          <div className="my-2 flex flex-col gap-2">
             {durations.map((duration) => (
               <button
                 key={duration}

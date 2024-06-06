@@ -1,0 +1,14 @@
+.vip-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transform: scale(0.85);
+  filter: blur(30px);
+  background: var(--antique-white);
+  background-size: 200%;
+  animation: backlight 10s ease infinite;
+}

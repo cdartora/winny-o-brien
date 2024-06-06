@@ -3,6 +3,7 @@ import Image from "next/image";
 import Testimonials from "./components/testimonials";
 import Carousel from "./components/carousel";
 import VipCard from "./components/vip-card";
+import ContactForm from "./components/contact-form";
 
 import { vip_cards } from "./data/cards";
 import "./page.css";
@@ -137,7 +138,7 @@ export default function Home() {
           seu passado, potencialize seu presente e vislumbre um futuro mais
           promissor.
         </p>
-        <div className="flex flex-col lg:flex-row items-center justify-center mt-6 gap-4 xl:max-w-5xl">
+        <div className="flex flex-col lg:flex-row items-center justify-center mt-6 gap-10 xl:max-w-5xl">
           <VipCard
             backgroundImage="card-1.png"
             cardInfo={vip_cards[0]}
@@ -173,32 +174,11 @@ export default function Home() {
             src="/map.svg"
             style={{ pointerEvents: "none", draggable: "false" }}
             alt="mapa com a localizacão do atendimento presencial"
+            className="p-6"
           />
         </div>
-        <div className="p-0 md:p-4 ">
-          <h1
-            className={`${cakelan.className} text-3xl my-4 text-antiqueWhite`}
-          >
-            MAIS ALGUMA DÚVIDA?
-          </h1>
-          <p className="md:text-md text-sm">NOME</p>
-          <input
-            type="text"
-            className="w-full h-10 bg-richBlack border-[1px] rounded-tl-lg p-2"
-          />
-          <p className="md:text-md text-sm mt-4">E-MAIL</p>
-          <input
-            type="text"
-            className="w-full h-10 bg-richBlack border-[1px] rounded-tl-lg p-2"
-          />
-          <p className="md:text-md text-sm mt-4">MENSAGEM</p>
-          <input
-            type="textarea"
-            className="w-full h-44 bg-richBlack border-[1px] rounded-tl-lg p-2"
-          />
-          <button className="mt-4 float-right hover:bg-white transition-all hover:text-richBlack flex justify-around self-end gap-2 md:text-md border px-4 md:px-8 py-2 rounded-full place-self-start">
-            <span className="whitespace-nowrap">Enviar</span>
-          </button>
+        <div className="p-0 md:p-4 w-full">
+          <ContactForm />
         </div>
       </div>
     </main>
