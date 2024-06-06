@@ -82,6 +82,7 @@ export default function Checkout({ isOpen, closeCheckout, cardInfo }) {
 
   const isFormValid =
     readingMethod !== "" && price !== 0 && selectedDuration !== 0;
+
   const whatsappLink = generateWhatsAppLink(
     name,
     readingMethod,
@@ -96,6 +97,7 @@ export default function Checkout({ isOpen, closeCheckout, cardInfo }) {
       checkout={true}
       price={price}
       link={isFormValid ? whatsappLink : "#"}
+      isFormValid={isFormValid}
     >
       <div className="my-10 flex justify-center">
         <Image src={imgUrl} width={150} height={150} alt={name} />
