@@ -9,6 +9,7 @@ function Card({ cardInfo }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const openCheckout = () => {
+    console.log("openCheckout");
     setIsOpen(true);
   };
 
@@ -33,7 +34,7 @@ function Card({ cardInfo }) {
           {cardInfo.summary}
         </p>
       </div>
-      <button type="button" onClick={openCheckout}>
+      <button className="opacity-80 hover:opacity-100 transition-all" type="button" onClick={openCheckout}>
         SAIBA MAIS
       </button>
 

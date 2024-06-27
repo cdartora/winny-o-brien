@@ -1,64 +1,40 @@
 "use client";
+
 import { useState, useEffect, useRef } from "react";
 import Card from "./card";
 import { cakelan } from "../page";
 import "./carousel.css";
-function handleData(data) {
-  console.log(data);
-  return data.map((card, index) => ({
-    number: card.number,
-    name: card.name,
-    summary: card.summary,
-    descriptions: [card.description1, card.description2],
-    durations: [
-      {
-        time: 30,
-        title: "Leitura Completa (30min)",
-        description: "Uma leitura detalhada e abrangente.",
-        price: card["30"],
-        image: "duration",
-      },
-      {
-        time: 45,
-        title: "Leitura Equilibrada (45min)",
-        description:
-          "Uma leitura balanceada, abrangendo várias questões com uma profundidade moderada.",
-        price: card["45"],
-        image: "duration",
-      },
-      {
-        time: 60,
-        title: "Leitura Profunda (60min)",
-        description:
-          "Uma leitura extensa e minuciosa, ideal para explorar temas complexos e obter insights aprofundados.",
-        price: card["60"],
-        image: "duration-more",
-      },
-    ],
-    imgUrl: `tarot/${index + 1}.svg`,
-  }));
-}
 
 function Carousel() {
   const carouselRef = useRef(null);
   const [centeredIndex, setCenteredIndex] = useState(0);
-  const [cards, setCards] = useState(null);
-  const [isLoading, setLoading] = useState(true);
+  const [cards, setCards] = useState([])
+ const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    console.log(process.env.CARDS_API_URL);
-    fetch(process.env.CARDS_API_URL)
-      .then((res) => res.json())
-      .then((data) => {
-        const cardsData = handleData(data);
-        setCards(cardsData);
+    const fetchCards = async () => {
+      try {
+        const response = await fetch('/api/cards');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const {cards} = await response.json();
+        setCards(cards);
+      } catch (error) {
+        setError(error);
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+
+    fetchCards();
   }, []);
 
+  // logica para centralizar as cartas no carrosel
   useEffect(() => {
     const carousel = carouselRef.current;
-    const cards = carousel.querySelectorAll(".card");
+    const cardElements = carousel.querySelectorAll(".card");
 
     const handleScroll = () => {
       const carouselRect = carousel.getBoundingClientRect();
@@ -67,7 +43,7 @@ function Carousel() {
       let closestIndex = 0;
       let closestDistance = Infinity;
 
-      cards.forEach((card, index) => {
+      cardElements.forEach((card, index) => {
         const cardRect = card.getBoundingClientRect();
         const cardCenter = (cardRect.left + cardRect.right) / 2;
         const distance = Math.abs(carouselCenter - cardCenter);
@@ -81,7 +57,7 @@ function Carousel() {
       setCenteredIndex(closestIndex);
     };
 
-    handleScroll(); // Initial call to set the first centered element
+    handleScroll();
     carousel.addEventListener("scroll", handleScroll);
 
     return () => {
@@ -90,15 +66,17 @@ function Carousel() {
   }, [cards]);
 
   useEffect(() => {
-    const cards = carouselRef.current.querySelectorAll(".card");
-    cards.forEach((card, index) => {
+    if (!cards) return;
+
+    const cardElements = carouselRef.current.querySelectorAll(".card");
+    cardElements.forEach((card, index) => {
       if (index === centeredIndex) {
         card.classList.add("centered");
       } else {
         card.classList.remove("centered");
       }
     });
-  }, [centeredIndex]);
+  }, [centeredIndex, cards]);
 
   return (
     <div id="tarot" className="carousel-container">
@@ -124,10 +102,9 @@ function Carousel() {
       </p>
 
       <div ref={carouselRef} className="carousel">
-        {isLoading && <p>is Loading...</p>}
         {cards &&
           cards.map((currentCard) => (
-            <Card cardInfo={currentCard} key={currentCard} />
+            <Card cardInfo={currentCard} key={currentCard.number} />
           ))}
       </div>
     </div>
