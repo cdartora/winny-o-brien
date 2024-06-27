@@ -1,9 +1,4 @@
-import { NextResponse } from "next/server";
-
-export const dynamic = "auto";
-export const revalidate = 4;
-
-function handleData(data) {
+export function handleData(data) {
   return data.map((card, index) => ({
     number: card.number,
     name: card.name,
@@ -36,11 +31,4 @@ function handleData(data) {
     ],
     imgUrl: `tarot/${index + 1}.svg`,
   }));
-}
-
-export async function GET() {
-  const res = await fetch(process.env.CARDS_API_URL);
-  const data = await res.json();
-  const cards = handleData(data);
-  return NextResponse.json({cards});
 }

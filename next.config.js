@@ -7,7 +7,8 @@ const nextConfig = {
   env: {
     SMTP_PASS: process.env.SMTP_PASS,
     GOOGLE_API_KEY: process.env.GOOGLE_API_KEY,
-    CARDS_API_URL: process.env.CARDS_API_URL 
+    CARDS_API_URL: process.env.CARDS_API_URL, 
+    VIP_CARDS_API_URL: process.env.VIP_CARDS_API_URL, 
   },
 };
 

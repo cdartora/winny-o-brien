@@ -2,17 +2,26 @@ import Image from "next/image";
 
 import Testimonials from "./components/testimonials";
 import Carousel from "./components/carousel";
-import VipCard from "./components/vip-card";
+import VipSection from "./components/vip-section";
 import ContactForm from "./components/contact-form";
 
-import { vip_cards } from "./data/cards";
 import "./page.css";
 
 import localFont from "next/font/local";
+import { handleData } from "./utils";
 const cakelan = localFont({ src: "./fonts/cakelan.woff" });
 export { cakelan };
 
-export default function Home() {
+async function fetchCards() {
+  const res = await fetch(process.env.CARDS_API_URL);
+  const data = await res.json();
+  console.table(data)
+  const cards = handleData(data);
+  return cards;
+}
+
+export default async function Home() {
+  const cards = await fetchCards();
   return (
     <main className="main-container">
       <div id="hero" className="hero">
@@ -120,7 +129,7 @@ export default function Home() {
         />
       </div>
 
-      <Carousel />
+      <Carousel cards={cards}/>
 
       <div
         id="vip"
@@ -138,18 +147,8 @@ export default function Home() {
           seu passado, potencialize seu presente e vislumbre um futuro mais
           promissor.
         </p>
-        <div className="flex flex-col lg:flex-row items-center justify-center mt-6 gap-10 xl:max-w-5xl">
-          <VipCard
-            backgroundImage="card-1.png"
-            cardInfo={vip_cards[0]}
-            title={vip_cards[0].name}
-          />
-          <VipCard
-            backgroundImage="card-2.png"
-            cardInfo={vip_cards[1]}
-            title={vip_cards[1].name}
-          />
-        </div>
+
+        <VipSection />
       </div>
 
       <div

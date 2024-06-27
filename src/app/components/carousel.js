@@ -3,33 +3,12 @@
 import { useState, useEffect, useRef } from "react";
 import Card from "./card";
 import { cakelan } from "../page";
+
 import "./carousel.css";
 
-function Carousel() {
+function Carousel({ cards }) {
   const carouselRef = useRef(null);
   const [centeredIndex, setCenteredIndex] = useState(0);
-  const [cards, setCards] = useState([])
- const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchCards = async () => {
-      try {
-        const response = await fetch('/api/cards');
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const {cards} = await response.json();
-        setCards(cards);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCards();
-  }, []);
 
   // logica para centralizar as cartas no carrosel
   useEffect(() => {
@@ -102,10 +81,9 @@ function Carousel() {
       </p>
 
       <div ref={carouselRef} className="carousel">
-        {cards &&
-          cards.map((currentCard) => (
-            <Card cardInfo={currentCard} key={currentCard.number} />
-          ))}
+        {cards&&cards.map((currentCard) => (
+          <Card cardInfo={currentCard} key={currentCard.number} />
+        ))}
       </div>
     </div>
   );
