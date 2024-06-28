@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-import Checkout from "./checkout";
+import VipCheckout from "./vip-checkout";
 
 import { cakelan } from "../page";
 import "./vip-card.css"
@@ -46,10 +46,11 @@ export default function VipCard({ backgroundImage, title, cardInfo }) {
         </div>
         {isOpen && (
           <>
-            <Checkout
+            <VipCheckout
               isOpen={isOpen}
               closeCheckout={closeCheckout}
               cardInfo={cardInfo}
+              imgUrl={backgroundImage}
             />
           </>
         )}

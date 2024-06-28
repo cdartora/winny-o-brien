@@ -15,7 +15,7 @@ export { cakelan };
 async function fetchCards() {
   const res = await fetch(process.env.CARDS_API_URL);
   const data = await res.json();
-  console.table(data)
+  console.table(data);
   const cards = handleData(data);
   return cards;
 }
@@ -129,7 +129,7 @@ export default async function Home() {
         />
       </div>
 
-      <Carousel cards={cards}/>
+      <Carousel cards={cards} />
 
       <div
         id="vip"
@@ -143,9 +143,9 @@ export default async function Home() {
           sentidos emocionais, proporcionando uma compreensão mais profunda da
           vasta potência que nos cerca. <br />
           Os atendimentos energéticos são um convite para explorar o
-          desenvolvimento constante da consciência, permitindo que você se reconcilie com
-          seu passado, potencialize seu presente e vislumbre um futuro mais
-          promissor.
+          desenvolvimento constante da consciência, permitindo que você se
+          reconcilie com seu passado, potencialize seu presente e vislumbre um
+          futuro mais promissor.
         </p>
 
         <VipSection />
@@ -166,15 +166,21 @@ export default async function Home() {
             leituras são realizadas no Café Mal Assombrado Poa, na Rua Cel.
             Fernando Machado 513.
           </p>
-          <Image
-            layout="responsive"
-            width={536}
-            height={636}
-            src="/map.svg"
-            style={{ pointerEvents: "none", draggable: "false" }}
-            alt="mapa com a localizacão do atendimento presencial"
-            className="p-6"
-          />
+          <a
+            href="https://www.google.com.br/maps/place/Caf%C3%A9+Mal+Assombrado+Poa/@-30.0352045,-51.2351016,17z/data=!3m1!4b1!4m6!3m5!1s0x9519798f9d90fc6d:0x784cc1d8954a9d0b!8m2!3d-30.0352092!4d-51.2325267!16s%2Fg%2F11tg1pp4zd?entry=ttu"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Image
+              layout="responsive"
+              width={536}
+              height={636}
+              src="/map.svg"
+              style={{ pointerEvents: "none", draggable: "false" }}
+              alt="mapa com a localizacão do atendimento presencial"
+              className="p-6"
+            />
+          </a>
         </div>
         <div className="p-0 md:p-4 w-full">
           <ContactForm />
