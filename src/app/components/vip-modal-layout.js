@@ -47,7 +47,7 @@ function VipModalLayout({
             >
               <Dialog.Panel className="flex flex-col items-center relative max-w-3xl overflow-y-auto max-h-full md:max-h-[90vh] transform md:rounded-2xl bg-backgroundWhite p-2 pb-2 pt-12 text-left align-middle shadow-xl transition-all text-richBlack ">
                 <div
-                  className="gallery-header bg-contain bg-center bg-no-repeat h-[300px]"
+                  className="gallery-header bg-cover bg-top bg-no-repeat h-[300px]"
                   style={{ backgroundImage: `url(${imgUrl})` }}
                 >
                   <button

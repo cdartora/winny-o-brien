@@ -7,7 +7,7 @@ import VipCheckout from "./vip-checkout";
 import { cakelan } from "../page";
 import "./vip-card.css"
 
-export default function VipCard({ backgroundImage, title, cardInfo }) {
+export default function VipCard({ cardBg, checkoutBg, title, cardInfo }) {
   const [isOpen, setIsOpen] = useState(false);
   function openCheckout() {
     setIsOpen(true);
@@ -19,7 +19,7 @@ export default function VipCard({ backgroundImage, title, cardInfo }) {
     <div className="relative hover:scale-105 transition-all vip-card">
       <div
         className="z-10 hover: flex flex-col items-center w-[300px] h-[450px] md:w-[402px] md:h-[603px] relative bg-center bg-cover text-richBlack shadow-2xl"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+        style={{ backgroundImage: `url(${cardBg})` }}
       >
         <Image
           src="./vip-detail.svg"
@@ -29,7 +29,7 @@ export default function VipCard({ backgroundImage, title, cardInfo }) {
           className="absolute z-20 top-4 w-[260px] md:w-[360px] h-[208px] md:h-[290px]"
         />
         <h3 className={`${cakelan.className} text-white text-4xl mt-4 md:mt-6`}>W</h3>
-        <div className="z-30 absolute bottom-4 md:bottom-10 left-4">
+        <div className="z-30 absolute bottom-4 md:bottom-10 left-6">
           <h1
             className={`${cakelan.className} mt-2 md:mt-4 text-2xl text-white md:mb-2`}
           >
@@ -50,7 +50,7 @@ export default function VipCard({ backgroundImage, title, cardInfo }) {
               isOpen={isOpen}
               closeCheckout={closeCheckout}
               cardInfo={cardInfo}
-              imgUrl={backgroundImage}
+              imgUrl={checkoutBg}
             />
           </>
         )}

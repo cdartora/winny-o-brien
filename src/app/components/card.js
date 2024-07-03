@@ -38,7 +38,7 @@ function Card({ cardInfo }) {
         SAIBA MAIS
       </button>
 
-      <h3 className={`${cakelan.className} number`}>{cardInfo.number}</h3>
+      <h3 className={`${cakelan.className}`} id="number">{cardInfo.number}</h3>
 
       {isOpen && (
         <Checkout
